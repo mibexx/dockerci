@@ -1,0 +1,16 @@
+<database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/propelorm/Propel2/master/resources/xsd/database.xsd"
+          namespace="Orm\App\User\Persistence"
+          name="default"
+>
+
+    <table name="user">
+        <column name="user_id" autoIncrement="true" required="true" primaryKey="true" type="INTEGER"/>
+        <column name="email" required="true" type="VARCHAR"/>
+        <column name="password" required="true" type="VARCHAR"/>
+        <column name="firstname" required="true" type="VARCHAR"/>
+        <column name="lastname" required="true" type="VARCHAR"/>
+        <column name="company" type="VARCHAR"/>
+    </table>
+
+</database>

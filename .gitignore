@@ -1,0 +1,15 @@
+/.idea
+/vendor
+/src/Generated/*
+/src/Orm/*
+!/src/Generated/Ide
+/src/Generated/Ide/*
+/tests/_output
+/tests/_support/_generated
+/node_modules
+/config/propel/*
+/config/config_local.php
+/public/js
+/public/fonts
+/public/css
+!.gitkeep

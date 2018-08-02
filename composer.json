@@ -1,0 +1,45 @@
+{
+  "name"             : "xervice/xervice",
+  "license"          : "MIT",
+  "authors"          : [
+    {
+      "name" : "Mike Bertram",
+      "email": "contact@mibexx.de"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "7.1.*",
+    "codeception/codeception": "*",
+    "symfony/var-dumper": "*",
+    "xervice/development": "*",
+    "filp/whoops": "^2.2.0"
+  },
+  "require": {
+    "php": ">=7.1.0",
+    "xervice/exception-handler": "^1.1.0",
+    "xervice/data-provider": "^1.4.4",
+    "xervice/log-rabbitmq": "^1.0.1",
+    "xervice/event-rabbitmq": "^1.1.1",
+    "xervice/api": "^1.0.0",
+    "xervice/security": "^2.0.0",
+    "xervice/database": "^1.3.0",
+    "xervice/session": "^1.3.0",
+    "xervice/redis": "^1.2.0",
+    "xervice/atomic": "1.0.0",
+    "propel/propel": "2.0.0-alpha8"
+  },
+  "autoload": {
+    "psr-4": {
+      "DataProvider\\": "src/Generated/"
+    },
+    "psr-0": {
+      "App\\": "src/",
+      "Orm\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AppTest\\": "tests/App/"
+    }
+  }
+}

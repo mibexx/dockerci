@@ -1,0 +1,4 @@
+actor: AppTester
+modules:
+    enabled:
+        - \XerviceTest\Helper\App
