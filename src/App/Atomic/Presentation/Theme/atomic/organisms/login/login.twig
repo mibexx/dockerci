@@ -1,0 +1,56 @@
+{% setting data = {
+    content: {
+        title: 'Login',
+        username: 'Username',
+        password: 'Password',
+        button: 'Login',
+        register: 'Create new account'
+    },
+    form: {
+        action: '/login',
+        register: '/register'
+    }
+} %}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">{{ data.content.title }}</h4>
+        <div class="card-text">
+            <form action="{{ data.form.action }}">
+                <div class="form-group">
+                    <div class="input-group">
+                        {% embed molecule('input-prepend') with {
+                            data: {
+                                id: 'loginFormUsername',
+                                prepend: data.content.username
+                            }
+                        } %}{% endembed %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        {% embed molecule('input-prepend') with {
+                            data: {
+                                id: 'loginFormPassword',
+                                type: 'password',
+                                prepend: data.content.password
+                            }
+                        } %}{% endembed %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        {% embed atom('submit-primary') with {
+                            data: {
+                                value: 'Login'
+                            }
+                        } %}{% endembed %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <a href="{{ data.form.register }}">{{ data.content.register }}</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

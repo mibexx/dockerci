@@ -1,0 +1,8 @@
+{% extends template('layout', 'DockerCi') %}
+
+{% block body %}
+    <body class="body-center">
+        {% block content %}{% endblock %}
+        {% embed molecule('footer') %}{% endembed %}
+    </body>
+{% endblock %}

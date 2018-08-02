@@ -15,7 +15,10 @@ XerviceSettings.scss.setPaths(
     ]
 );
 
-xerviceFiles = [];
+xerviceFiles = [
+    path.join(__dirname, 'scss', 'main.scss'),
+    path.join(__dirname, 'js', 'main.js')
+];
 xerviceFiles = xerviceFiles.concat(Xervice(XerviceSettings).getFilesWithType('*.scss'));
 xerviceFiles = xerviceFiles.concat(Xervice(XerviceSettings).getFilesWithType('*.js'));
 

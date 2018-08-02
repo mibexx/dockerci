@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     {% embed molecule('header') %}{% endembed %}
+    {% block body %}
     <body>
-
-        <div class="container">
-            {% block body %}{% endblock %}
-        </div>
-
+        {% block content %}{% endblock %}
         {% embed molecule('footer') %}{% endembed %}
     </body>
+    {% endblock %}
 </html>

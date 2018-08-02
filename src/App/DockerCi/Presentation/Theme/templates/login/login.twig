@@ -1,0 +1,11 @@
+{% extends template('layout-center', 'DockerCi') %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-4">
+                {% embed organism('login') %}{% endembed %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

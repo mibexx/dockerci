@@ -1,0 +1,15 @@
+{% setting data = {
+    prepend: '@',
+    id: 'input-prepend',
+    placeholder: '',
+    type: 'text'
+} %}
+
+{% block prepend %}
+    <div class="input-group-prepend">
+        <div class="input-group-text">{{ data.prepend }}</div>
+    </div>
+{% endblock %}
+{% block input %}
+    <input type="{{ data.type }}" class="form-control" id="{{ data.id }}"{% if data.placeholder != "" %} placeholder="{{ data.placeholder }}"{% endif %} />
+{% endblock %}
