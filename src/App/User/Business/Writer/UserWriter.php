@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\User\Business\Writer;
 
 
+use App\User\Business\Password\PasswordHandlerInterface;
 use App\User\UserQueryContainer;
 use DataProvider\UserDataProvider;
 use Orm\App\User\Persistence\User as UserEntity;
@@ -16,14 +17,24 @@ class UserWriter implements UserWriterInterface
     private $queryContainer;
 
     /**
+     * @var \App\User\Business\Password\PasswordHandlerInterface
+     */
+    private $passwordHandler;
+
+    /**
      * UserWriter constructor.
      *
      * @param \App\User\UserQueryContainer $queryContainer
+     * @param \App\User\Business\Password\PasswordHandlerInterface $passwordHandler
      */
-    public function __construct(UserQueryContainer $queryContainer)
-    {
+    public function __construct(
+        UserQueryContainer $queryContainer,
+        PasswordHandlerInterface $passwordHandler
+    ) {
         $this->queryContainer = $queryContainer;
+        $this->passwordHandler = $passwordHandler;
     }
+
 
     /**
      * @param \DataProvider\UserDataProvider $userDataProvider
@@ -38,6 +49,8 @@ class UserWriter implements UserWriterInterface
         if (!$user) {
             $user = new UserEntity();
         }
+
+        $userDataProvider = $this->passwordHandler->encrypt($userDataProvider);
 
         $user->fromArray($userDataProvider->toArray());
         $user->save();

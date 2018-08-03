@@ -1,0 +1,7 @@
+{% setting data = {
+    href: '#',
+    text: 'Link',
+    class: '',
+    target: ''
+} %}
+<a href="{{ data.href }}"{% if data.class != "" %} class="{{ data.class }}"{% endif %}{% if data.target != "" %} class="{{ data.target }}"{% endif %}>{{ data.text }}</a>

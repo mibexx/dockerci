@@ -55,7 +55,7 @@ class IntegrationTest extends \Codeception\Test\Unit
     {
         $userDataProvider = new UserDataProvider();
         $userDataProvider->setUserId($this->testUser->getUserId());
-        $user = $this->getFacade()->getUser($userDataProvider);
+        $user = $this->getFacade()->getUserFromDb($userDataProvider);
 
         $this->assertEquals(
             $this->testUser->getEmail(),
@@ -72,7 +72,7 @@ class IntegrationTest extends \Codeception\Test\Unit
     {
         $userDataProvider = new UserDataProvider();
         $userDataProvider->setEmail($this->testUser->getEmail());
-        $user = $this->getFacade()->getUser($userDataProvider);
+        $user = $this->getFacade()->getUserFromDb($userDataProvider);
 
         $this->assertEquals(
             $this->testUser->getFirstname(),

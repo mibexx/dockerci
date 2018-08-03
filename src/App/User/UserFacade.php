@@ -9,11 +9,34 @@ use Xervice\Core\Facade\AbstractFacade;
 
 /**
  * @method \App\User\UserFactory getFactory()
- * @method \App\User\UserConfig getConfig()
- * @method \App\User\UserClient getClient()
  */
 class UserFacade extends AbstractFacade
 {
+    public function logout(): void
+    {
+        $this->getFactory()->createUserSession()->logoutUser();
+    }
+
+    /**
+     * @return \DataProvider\UserDataProvider|null
+     */
+    public function getUser(): ?UserDataProvider
+    {
+        return $this->getFactory()->createUserSession()->getLoggedUser();
+    }
+
+    /**
+     * @param string $username
+     * @param string $password
+     *
+     * @return \DataProvider\UserDataProvider
+     * @throws \App\User\Business\Exception\AuthentificationException
+     */
+    public function loginUser(string $username, string $password): UserDataProvider
+    {
+        return $this->getFactory()->createUserAuthenticator()->login($username, $password);
+    }
+
     /**
      * @param \DataProvider\UserDataProvider $userDataProvider
      *
@@ -40,7 +63,7 @@ class UserFacade extends AbstractFacade
      *
      * @return \DataProvider\UserDataProvider
      */
-    public function getUser(UserDataProvider $userDataProvider): UserDataProvider
+    public function getUserFromDb(UserDataProvider $userDataProvider): UserDataProvider
     {
         return $this->getFactory()->createUserReader()->getUser($userDataProvider);
     }

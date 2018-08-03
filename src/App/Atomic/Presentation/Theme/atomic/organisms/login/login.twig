@@ -48,7 +48,12 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <a href="{{ data.form.register }}">{{ data.content.register }}</a>
+                    {% embed atom('link') with {
+                        data: {
+                            href: data.form.register,
+                            text: data.content.register
+                        }
+                    } %}{% endembed %}
                 </div>
             </form>
         </div>

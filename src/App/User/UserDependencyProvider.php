@@ -14,6 +14,8 @@ class UserDependencyProvider extends AbstractProvider
 {
     public const USER_QUERY = 'user.query';
 
+    public const SESSION_CLIENT = 'session.cient';
+
     /**
      * @param \Xervice\Core\Dependency\DependencyProviderInterface $dependencyProvider
      */
@@ -21,6 +23,10 @@ class UserDependencyProvider extends AbstractProvider
     {
         $dependencyProvider[self::USER_QUERY] = function (DependencyProviderInterface $dependencyProvider) {
             return $dependencyProvider->getLocator()->user()->queryContainer();
+        };
+
+        $dependencyProvider[self::SESSION_CLIENT] = function (DependencyProviderInterface $dependencyProvider) {
+            return $dependencyProvider->getLocator()->session()->client();
         };
     }
 }
