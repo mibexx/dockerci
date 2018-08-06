@@ -1,5 +1,6 @@
 <?php
 
+use App\Session\SessionConfig;
 use Xervice\Config\XerviceConfig;
 use Xervice\Core\CoreConfig;
 use Xervice\Database\DatabaseConfig;
