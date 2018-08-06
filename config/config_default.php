@@ -59,3 +59,6 @@ $config[XerviceConfig::ADDITIONAL_CONFIG_FILES] = [
     __DIR__ . '/static/config_propel.php',
     __DIR__ . '/static/config_redis.php'
 ];
+
+$config[SessionConfig::SESSION_TTL] = 3600;
+$config[SessionConfig::SESSION_PREFIX] = 'session:dockerci.';

@@ -7,6 +7,9 @@ namespace App\Session;
 use Xervice\Redis\Session\RedisSessionHandler;
 use Xervice\Session\SessionDependencyProvider as XerviceSessionDependencyProvider;
 
+/**
+ * @method \App\Session\SessionConfig getConfig()
+ */
 class SessionDependencyProvider extends XerviceSessionDependencyProvider
 {
     /**
@@ -17,7 +20,13 @@ class SessionDependencyProvider extends XerviceSessionDependencyProvider
     protected function getSessionHandler(): \SessionHandlerInterface
     {
         return new RedisSessionHandler(
-            $this->getLocator()->redis()->client()
+            $this->getLocator()->redis()->client(),
+            [
+                'prefix' => $this->getConfig()->getSessionPrefix(),
+                'ttl'    => $this->getConfig()->getSessionTtl()
+            ]
         );
     }
+
+
 }

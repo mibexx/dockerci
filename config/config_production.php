@@ -16,7 +16,6 @@ $config[RabbitMQConfig::CONNECTION_VIRTUALHOST] = '/';
 $config[RedisConfig::REDIS_HOST] = '127.0.0.1';
 $config[RedisConfig::REDIS_PORT] = 6379;
 
-
 // Database
 $config[DatabaseConfig::PROPEL_CONF_HOST] = '127.0.0.1';
 $config[DatabaseConfig::PROPEL_CONF_PORT] = '5432';
