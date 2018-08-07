@@ -1,8 +1,8 @@
 #!/bin/bash
 
+git fetch -vp
 git reset --hard HEAD
 git checkout .
-git fetch -vp
 git pull
 
 rm -rf src/Orm/*
