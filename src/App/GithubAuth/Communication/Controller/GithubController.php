@@ -22,7 +22,7 @@ class GithubController extends AbstractApiController
         $auth = new GithubAuthRequestDataProvider();
         $auth
             ->setRedirectUrl('https://dockerci.mibexx.de/github/auth')
-            ->setScope('read:user');
+            ->setScope('read:user,user:email');
 
         $this->getFacade()->authForGithub($auth);
     }
