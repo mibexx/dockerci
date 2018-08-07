@@ -44,4 +44,9 @@ class GithubController extends AbstractApiController
 
         dump($user);
     }
+
+    public function oauthAction(Request $request)
+    {
+
+    }
 }
