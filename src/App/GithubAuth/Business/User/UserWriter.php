@@ -62,8 +62,6 @@ class UserWriter implements UserWriterInterface
 
             $newUser = $this->userFacade->getUserFromDb($newUser);
 
-            dump($newUser); exit;
-
             if (!$newUser->hasUserId()) {
                 $newUser
                     ->setPassword(md5(time() . $primaryEmail))
@@ -72,7 +70,7 @@ class UserWriter implements UserWriterInterface
                     ->setGithubtoken($accessToken);
 
                 $newUser = $this->userFacade->registerUser($newUser);
-            } elseif ($newUser->getUserType() === 'github') {
+            } elseif ($newUser->getType() === 'github') {
                 $newUser->setGithubtoken($accessToken);
             } else {
                 $newUser = new UserDataProvider();
