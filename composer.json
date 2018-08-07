@@ -28,7 +28,7 @@
     "xervice/session": "^1.3.0",
     "xervice/redis": "^1.2.0",
     "xervice/atomic": "1.0.0",
-    "xervice/github-oauth": "^0.2.0",
+    "xervice/github-oauth": "^0.3.0",
     "propel/propel": "2.0.0-alpha8"
   },
   "autoload": {
