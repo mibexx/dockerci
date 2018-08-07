@@ -14,4 +14,11 @@ interface UserAuthenticatorInterface
      * @throws \App\User\Business\Exception\AuthentificationException
      */
     public function login(string $username, string $password): UserDataProvider;
+
+    /**
+     * @param \DataProvider\UserDataProvider $userDataProvider
+     *
+     * @return \DataProvider\UserDataProvider
+     */
+    public function loginWithoutAuthentification(UserDataProvider $userDataProvider): UserDataProvider;
 }

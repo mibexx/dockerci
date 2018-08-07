@@ -74,4 +74,16 @@ class UserAuthenticator implements UserAuthenticatorInterface
 
         return $userDataProvider;
     }
+
+    /**
+     * @param \DataProvider\UserDataProvider $userDataProvider
+     *
+     * @return \DataProvider\UserDataProvider
+     */
+    public function loginWithoutAuthentification(UserDataProvider $userDataProvider): UserDataProvider
+    {
+        $this->userSession->loginUser($userDataProvider);
+
+        return $userDataProvider;
+    }
 }

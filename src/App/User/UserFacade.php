@@ -41,6 +41,16 @@ class UserFacade extends AbstractFacade
      * @param \DataProvider\UserDataProvider $userDataProvider
      *
      * @return \DataProvider\UserDataProvider
+     */
+    public function loginUserWithoutAuthentification(UserDataProvider $userDataProvider): UserDataProvider
+    {
+        return $this->getFactory()->createUserAuthenticator()->loginWithoutAuthentification($userDataProvider);
+    }
+
+    /**
+     * @param \DataProvider\UserDataProvider $userDataProvider
+     *
+     * @return \DataProvider\UserDataProvider
      * @throws \Propel\Runtime\Exception\PropelException
      */
     public function saveUser(UserDataProvider $userDataProvider): UserDataProvider

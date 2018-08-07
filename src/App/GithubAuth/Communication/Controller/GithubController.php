@@ -46,7 +46,7 @@ class GithubController extends AbstractApiController
 
         $token = $this->getFacade()->getAccessToken($token);
         $newUser = $this->getFactory()->createGithubUserWriter()->addUserFromGithub($token->getAccessToken());
-        $this->getFactory()->getUserFacade()->loginUser($newUser);
+        $this->getFactory()->getUserFacade()->loginUserWithoutAuthentification($newUser);
 
         return new RedirectResponse('/');
     }
