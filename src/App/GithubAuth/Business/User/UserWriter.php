@@ -62,6 +62,8 @@ class UserWriter implements UserWriterInterface
 
             $newUser = $this->userFacade->getUserFromDb($newUser);
 
+            dump($newUser); exit;
+
             if (!$newUser->hasUserId()) {
                 $newUser
                     ->setPassword(md5(time() . $primaryEmail))
