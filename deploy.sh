@@ -14,3 +14,6 @@ vendor/bin/xervice pr:mi
 
 npm install
 npm run build
+
+
+composer -o dump-autoload
