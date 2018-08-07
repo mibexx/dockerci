@@ -45,7 +45,7 @@ class GithubController extends AbstractApiController
 
         dump($user);
 
-        $this->sendResponse('');
+        return $this->sendResponse('');
     }
 
     /**
