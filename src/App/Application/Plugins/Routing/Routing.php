@@ -5,6 +5,7 @@ namespace App\Application\Plugins\Routing;
 
 
 use App\DockerCi\Communication\Controller\IndexController;
+use App\GithubAuth\Communication\Controller\GithubController;
 use DataProvider\RouteCollectionDataProvider;
 use Xervice\Controller\Business\Route\AbstractControllerProvider;
 
@@ -30,6 +31,8 @@ class Routing extends AbstractControllerProvider
     protected function defineRoutes(): void
     {
          $this->addRoute('/', IndexController::class, 'indexAction', ['GET']);
+         $this->addRoute('/github/login', GithubController::class, 'indexAction', ['GET']);
+         $this->addRoute('/github/auth', GithubController::class, 'authAction', ['GET']);
     }
 
     /**
