@@ -32,6 +32,7 @@ class Routing extends AbstractControllerProvider
     protected function defineRoutes(): void
     {
          $this->addRoute('/', IndexController::class, 'indexAction', ['GET']);
+         $this->addRoute('/register', UserController::class, 'registerAction', ['GET', 'POST']);
          $this->addRoute('/login', UserController::class, 'loginAction', ['POST']);
          $this->addRoute('/logout', UserController::class, 'logoutAction', ['GET']);
 

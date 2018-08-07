@@ -5,6 +5,7 @@ namespace App\Twig;
 
 
 use App\User\Business\Twig\UserTwigExtension;
+use Symfony\Bridge\Twig\Extension\FormExtension;
 use Xervice\Atomic\Business\Twig\AtomicTwigExtension;
 use Xervice\Twig\TwigDependencyProvider as XerviceTwigDependencyProvider;
 
@@ -17,7 +18,8 @@ class TwigDependencyProvider extends XerviceTwigDependencyProvider
     {
         return [
             new AtomicTwigExtension(),
-            new UserTwigExtension()
+            new UserTwigExtension(),
+            new FormExtension()
         ];
     }
 

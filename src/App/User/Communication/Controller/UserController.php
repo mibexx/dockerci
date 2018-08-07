@@ -4,6 +4,12 @@
 namespace App\User\Communication\Controller;
 
 
+use App\Application\Communication\Controller\AbstractTwigController;
+use DataProvider\UserDataProvider;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormFactory;
+use Symfony\Component\Form\Forms;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,7 +18,7 @@ use Xervice\Controller\Business\Controller\AbstractController;
 /**
  * @method \App\User\UserFacade getFacade()
  */
-class UserController extends AbstractController
+class UserController extends AbstractTwigController
 {
     /**
      * @param \Symfony\Component\HttpFoundation\Request $request
@@ -40,5 +46,20 @@ class UserController extends AbstractController
     {
         $this->getFacade()->logout();
         return new RedirectResponse('/');
+    }
+
+    public function registerAction(): Response
+    {
+        $user = new UserDataProvider();
+
+        $formFactory = Forms::createFormFactoryBuilder()
+            ->getFormFactory();
+        $form = $formFactory->createBuilder(FormType::class, $user)->getForm();
+
+        dump($form);
+
+        return $this->sendTwig('pages/register.twig', [
+            'form' => $form
+        ]);
     }
 }
