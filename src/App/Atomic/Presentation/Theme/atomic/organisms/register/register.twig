@@ -1,0 +1,103 @@
+{% setting data = {
+    content: {
+        title: 'Register',
+        username: 'E-Mail',
+        password: 'Password',
+        firstname: 'Firstname',
+        lastname: 'Lastname',
+        company: 'Company',
+        button: 'Register',
+        register: 'Create new account'
+    },
+    form: {
+        action: '/register',
+        register: '/register',
+        data: {
+            Email: '',
+            Firstname: '',
+            Lastname: '',
+            Company: '',
+        }
+    }
+} %}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">{{ data.content.title }}</h4>
+        <div class="card-text">
+            <form action="{{ data.form.action }}" method="post">
+                <div class="form-group">
+                    <div class="input-group">
+                        {% embed molecule('input-prepend') with {
+                            data: {
+                                id: 'loginFormEmail',
+                                prepend: data.content.username,
+                                name: 'registerForm[Email]',
+                                required: true,
+                                value: data.form.data.Email
+                            }
+                        } %}{% endembed %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        {% embed molecule('input-prepend') with {
+                            data: {
+                                id: 'loginFormPassword',
+                                type: 'password',
+                                name: 'registerForm[Password]',
+                                required: true,
+                                prepend: data.content.password
+                            }
+                        } %}{% endembed %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        {% embed molecule('input-prepend') with {
+                            data: {
+                                id: 'loginFormFirstname',
+                                prepend: data.content.firstname,
+                                name: 'registerForm[Firstname]',
+                                value: data.form.data.Firstname
+                            }
+                        } %}{% endembed %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        {% embed molecule('input-prepend') with {
+                            data: {
+                                id: 'loginFormLastname',
+                                prepend: data.content.lastname,
+                                name: 'registerForm[Lastname]',
+                                value: data.form.data.Lastname
+                            }
+                        } %}{% endembed %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        {% embed molecule('input-prepend') with {
+                            data: {
+                                id: 'loginFormCompany',
+                                prepend: data.content.company,
+                                name: 'registerForm[Company]',
+                                value: data.form.data.Company
+                            }
+                        } %}{% endembed %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        {% embed atom('submit') with {
+                            data: {
+                                value: 'Register'
+                            }
+                        } %}{% endembed %}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

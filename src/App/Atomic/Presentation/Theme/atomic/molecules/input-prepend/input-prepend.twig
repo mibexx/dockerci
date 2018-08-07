@@ -1,6 +1,7 @@
 {% setting data = {
     prepend: '@',
     id: 'input-prepend',
+    value: '',
     placeholder: '',
     type: 'text',
     name: '',
@@ -13,5 +14,5 @@
     </div>
 {% endblock %}
 {% block input %}
-    <input type="{{ data.type }}"{% if data.required %} required="required"{% endif %} name="{{ data.name }}" class="form-control" id="{{ data.id }}"{% if data.placeholder != "" %} placeholder="{{ data.placeholder }}"{% endif %} />
+    <input type="{{ data.type }}"{% if data.required %} required="required"{% endif %} name="{{ data.name }}" class="form-control" id="{{ data.id }}"{% if data.placeholder != "" %} placeholder="{{ data.placeholder }}"{% endif %}{% if data.value != "" %} value="{{ data.value }}"{% endif %} />
 {% endblock %}

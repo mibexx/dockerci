@@ -1,5 +1,17 @@
-dfsdf
+{% extends template('layout-center', 'DockerCi') %}
 
-
-{{ form_start(form) }}
-{{ form_end(form) }}
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-4">
+                {% embed organism('register') with {
+                    data: {
+                        form: {
+                            data: registerForm
+                        }
+                    }
+                } %}{% endembed %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

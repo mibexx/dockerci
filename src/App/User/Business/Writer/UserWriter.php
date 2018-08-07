@@ -39,15 +39,19 @@ class UserWriter implements UserWriterInterface
     /**
      * @param \DataProvider\UserDataProvider $userDataProvider
      *
+     * @param bool $overwrite
+     *
      * @return \DataProvider\UserDataProvider
      * @throws \Propel\Runtime\Exception\PropelException
      */
-    public function writeUser(UserDataProvider $userDataProvider): UserDataProvider
+    public function writeUser(UserDataProvider $userDataProvider, bool $overwrite): UserDataProvider
     {
         $user = $this->getUserFromDataProvider($userDataProvider);
 
         if (!$user) {
             $user = new UserEntity();
+        } elseif (!$overwrite) {
+            return $userDataProvider;
         }
 
         $userDataProvider = $this->passwordHandler->encrypt($userDataProvider);

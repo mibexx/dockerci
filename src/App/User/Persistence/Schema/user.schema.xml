@@ -12,6 +12,7 @@
         <column name="lastname" required="true" type="VARCHAR"/>
         <column name="company" type="VARCHAR"/>
         <column name="githubtoken" type="VARCHAR"/>
+        <column name="type" default="local" type="VARCHAR"/>
     </table>
 
 </database>

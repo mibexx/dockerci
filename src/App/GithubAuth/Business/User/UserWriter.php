@@ -40,6 +40,7 @@ class UserWriter implements UserWriterInterface
      * @param string $accessToken
      *
      * @return \DataProvider\UserDataProvider
+     * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Propel\Runtime\Exception\PropelException
      */
     public function addUserFromGithub(string $accessToken): UserDataProvider
@@ -56,13 +57,24 @@ class UserWriter implements UserWriterInterface
         $newUser = new UserDataProvider();
         if ($primaryEmail) {
             $newUser
-                ->setEmail($primaryEmail)
-                ->setPassword(md5(time().$primaryEmail))
-                ->setFirstname('')
-                ->setLastname('')
-                ->setGithubtoken($accessToken);
+                ->setEmail($primaryEmail);
 
-            $newUser = $this->userFacade->saveUser($newUser);
+
+            $newUser = $this->userFacade->getUserFromDb($newUser);
+
+            if (!$newUser->hasUserId()) {
+                $newUser
+                    ->setPassword(md5(time() . $primaryEmail))
+                    ->setFirstname('')
+                    ->setLastname('')
+                    ->setGithubtoken($accessToken);
+
+                $newUser = $this->userFacade->registerUser($newUser);
+            } elseif ($newUser->getUserType() === 'github') {
+                $newUser->setGithubtoken($accessToken);
+            } else {
+                $newUser = new UserDataProvider();
+            }
         }
 
         return $newUser;

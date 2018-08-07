@@ -55,7 +55,18 @@ class UserFacade extends AbstractFacade
      */
     public function saveUser(UserDataProvider $userDataProvider): UserDataProvider
     {
-        return $this->getFactory()->createUserWriter()->writeUser($userDataProvider);
+        return $this->getFactory()->createUserWriter()->writeUser($userDataProvider, true);
+    }
+
+    /**
+     * @param \DataProvider\UserDataProvider $userDataProvider
+     *
+     * @return \DataProvider\UserDataProvider
+     * @throws \Propel\Runtime\Exception\PropelException
+     */
+    public function registerUser(UserDataProvider $userDataProvider): UserDataProvider
+    {
+        return $this->getFactory()->createUserWriter()->writeUser($userDataProvider, false);
     }
 
     /**

@@ -12,6 +12,7 @@
         <DataElement name="Password" type="string"/>
         <DataElement name="Firstname" type="string"/>
         <DataElement name="Lastname" type="string"/>
+        <DataElement name="UserType" default="local" type="string"/>
         <DataElement name="Company" default="''" type="string"/>
     </DataProvider>
 

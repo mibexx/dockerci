@@ -1,7 +1,7 @@
 {% setting data = {
     content: {
         title: 'Login',
-        username: 'Username',
+        email: 'E-Mail',
         password: 'Password',
         button: 'Login',
         register: 'Create new account'
@@ -21,8 +21,8 @@
                     <div class="input-group">
                         {% embed molecule('input-prepend') with {
                             data: {
-                                id: 'loginFormUsername',
-                                prepend: data.content.username,
+                                id: 'loginFormEmail',
+                                prepend: data.content.email,
                                 name: 'username',
                                 required: true
                             }

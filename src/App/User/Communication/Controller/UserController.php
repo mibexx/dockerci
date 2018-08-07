@@ -48,18 +48,31 @@ class UserController extends AbstractTwigController
         return new RedirectResponse('/');
     }
 
-    public function registerAction(): Response
+    /**
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Core\Locator\Dynamic\ServiceNotParseable
+     * @throws \Propel\Runtime\Exception\PropelException
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
+    public function registerAction(Request $request): Response
     {
         $user = new UserDataProvider();
+        if ($request->request->has('registerForm')) {
+            $user->fromArray($request->request->get('registerForm'));
 
-        $formFactory = Forms::createFormFactoryBuilder()
-            ->getFormFactory();
-        $form = $formFactory->createBuilder(FormType::class, $user)->getForm();
-
-        dump($form);
+            $user = $this->getFacade()->registerUser($user);
+            if ($user->hasUserId()) {
+                $this->getFacade()->loginUserWithoutAuthentification($user);
+                return new RedirectResponse('/');
+            }
+        }
 
         return $this->sendTwig('pages/register.twig', [
-            'form' => $form
+            'registerForm' => $user->toArray()
         ]);
     }
 }

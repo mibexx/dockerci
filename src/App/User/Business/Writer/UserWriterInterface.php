@@ -9,10 +9,11 @@ interface UserWriterInterface
     /**
      * @param \DataProvider\UserDataProvider $userDataProvider
      *
+     * @param bool $overwrite
+     *
      * @return \DataProvider\UserDataProvider
-     * @throws \Propel\Runtime\Exception\PropelException
      */
-    public function writeUser(UserDataProvider $userDataProvider): UserDataProvider;
+    public function writeUser(UserDataProvider $userDataProvider, bool $overwrite): UserDataProvider;
 
     /**
      * @param \DataProvider\UserDataProvider $userDataProvider
