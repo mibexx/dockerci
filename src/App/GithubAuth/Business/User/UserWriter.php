@@ -60,7 +60,7 @@ class UserWriter implements UserWriterInterface
                 ->setPassword(md5(time().$primaryEmail))
                 ->setFirstname('')
                 ->setLastname('')
-                ->setGithubToken($accessToken);
+                ->setGithubtoken($accessToken);
 
             $newUser = $this->userFacade->saveUser($newUser);
         }
