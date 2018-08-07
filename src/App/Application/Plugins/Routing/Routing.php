@@ -33,6 +33,7 @@ class Routing extends AbstractControllerProvider
          $this->addRoute('/', IndexController::class, 'indexAction', ['GET']);
          $this->addRoute('/github/login', GithubController::class, 'indexAction', ['GET']);
          $this->addRoute('/github/auth', GithubController::class, 'authAction', ['GET']);
+         $this->addRoute('/github/oauth', GithubController::class, 'oauthAction', ['GET']);
     }
 
     /**

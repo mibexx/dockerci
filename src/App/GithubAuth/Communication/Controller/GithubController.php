@@ -31,7 +31,7 @@ class GithubController extends AbstractApiController
         $token = new GithubAccessTokenRequestDataProvider();
         $token
             ->setCode($request->query->get('code'))
-            ->setRedirectUrl('/github/login');
+            ->setRedirectUrl('https://dockerci.mibexx.de/github/oauth');
 
         $token = $this->getFacade()->getAccessToken($token);
 
