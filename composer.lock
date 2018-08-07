@@ -1853,16 +1853,16 @@
         },
         {
             "name": "xervice/github-oauth",
-            "version": "0.2.0",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/github-oauth.git",
-                "reference": "992f0d2ca4c611025e7e4071ffd1e9ad763fed2f"
+                "reference": "facfb2389d58153782d1b4147902eb3aefa8dd66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/github-oauth/zipball/992f0d2ca4c611025e7e4071ffd1e9ad763fed2f",
-                "reference": "992f0d2ca4c611025e7e4071ffd1e9ad763fed2f",
+                "url": "https://api.github.com/repos/xervice/github-oauth/zipball/facfb2389d58153782d1b4147902eb3aefa8dd66",
+                "reference": "facfb2389d58153782d1b4147902eb3aefa8dd66",
                 "shasum": ""
             },
             "require": {
@@ -1894,7 +1894,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-08-06T12:37:39+00:00"
+            "time": "2018-08-07T06:45:33+00:00"
         },
         {
             "name": "xervice/kernel",
@@ -2305,16 +2305,16 @@
         },
         {
             "name": "xervice/web",
-            "version": "1.2.3",
+            "version": "1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/web.git",
-                "reference": "ec2490d82fb3826188f243e0690e38bdea2a6375"
+                "reference": "6f46161f725c176796ac78ff600031c66ce94743"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/web/zipball/ec2490d82fb3826188f243e0690e38bdea2a6375",
-                "reference": "ec2490d82fb3826188f243e0690e38bdea2a6375",
+                "url": "https://api.github.com/repos/xervice/web/zipball/6f46161f725c176796ac78ff600031c66ce94743",
+                "reference": "6f46161f725c176796ac78ff600031c66ce94743",
                 "shasum": ""
             },
             "require": {
@@ -2346,7 +2346,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-07-23T16:23:06+00:00"
+            "time": "2018-08-07T06:52:12+00:00"
         }
     ],
     "packages-dev": [
