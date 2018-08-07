@@ -8,6 +8,7 @@ use DataProvider\GithubAccessTokenRequestDataProvider;
 use DataProvider\GithubAuthRequestDataProvider;
 use DataProvider\GithubRequestDataProvider;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Xervice\Api\Business\Controller\AbstractApiController;
 
 /**
@@ -45,8 +46,13 @@ class GithubController extends AbstractApiController
         dump($user);
     }
 
-    public function oauthAction(Request $request)
+    /**
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function oauthAction(Request $request): Response
     {
-
+        return $this->sendResponse($request->getContent());
     }
 }
