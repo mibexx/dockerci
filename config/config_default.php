@@ -6,6 +6,7 @@ use Xervice\Core\CoreConfig;
 use Xervice\Database\DatabaseConfig;
 use Xervice\DataProvider\DataProviderConfig;
 use Xervice\ExceptionHandler\ExceptionHandlerConfig;
+use Xervice\GithubAuth\GithubAuthConfig;
 use Xervice\RabbitMQ\RabbitMQConfig;
 use Xervice\Redis\RedisConfig;
 
@@ -63,3 +64,6 @@ $config[XerviceConfig::ADDITIONAL_CONFIG_FILES] = [
 
 $config[SessionConfig::SESSION_TTL] = 3600;
 $config[SessionConfig::SESSION_PREFIX] = 'session:dockerci.';
+
+$config[GithubAuthConfig::ACCESS_TOKEN_URL] = 'https://github.com/login/oauth/access_token';
+$config[GithubAuthConfig::AUTH_URL] = 'https://github.com/login/oauth/authorize';
