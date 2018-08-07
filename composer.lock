@@ -1928,16 +1928,16 @@
         },
         {
             "name": "xervice/github-oauth",
-            "version": "0.3.4",
+            "version": "0.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/github-oauth.git",
-                "reference": "568792ef6f0eaf5c7ea66806667332748bc4a957"
+                "reference": "bb8d2887b189b413a11bc3a4e9a34e9fc411561b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/github-oauth/zipball/568792ef6f0eaf5c7ea66806667332748bc4a957",
-                "reference": "568792ef6f0eaf5c7ea66806667332748bc4a957",
+                "url": "https://api.github.com/repos/xervice/github-oauth/zipball/bb8d2887b189b413a11bc3a4e9a34e9fc411561b",
+                "reference": "bb8d2887b189b413a11bc3a4e9a34e9fc411561b",
                 "shasum": ""
             },
             "require": {
@@ -1969,7 +1969,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-08-07T07:45:36+00:00"
+            "time": "2018-08-07T08:00:50+00:00"
         },
         {
             "name": "xervice/kernel",
