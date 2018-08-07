@@ -31,7 +31,9 @@ class UserSession implements UserSessionInterface
      */
     public function loginUser(UserDataProvider $userDataProvider): void
     {
-        $this->sessionClient->set(self::LOGIN_SESSION_KEY, json_encode($userDataProvider->toArray()));
+        if ($userDataProvider->hasUserId() && $userDataProvider->hasEmail()) {
+            $this->sessionClient->set(self::LOGIN_SESSION_KEY, json_encode($userDataProvider->toArray()));
+        }
     }
 
     public function logoutUser(): void
