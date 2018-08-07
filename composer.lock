@@ -2199,20 +2199,21 @@
         },
         {
             "name": "xervice/routing",
-            "version": "1.0.3",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/routing.git",
-                "reference": "cfc2fec8c62eace1db8b11027818621dd07060db"
+                "reference": "4a62efe2a02d572d485701fd65d6faeece2ae39a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/routing/zipball/cfc2fec8c62eace1db8b11027818621dd07060db",
-                "reference": "cfc2fec8c62eace1db8b11027818621dd07060db",
+                "url": "https://api.github.com/repos/xervice/routing/zipball/4a62efe2a02d572d485701fd65d6faeece2ae39a",
+                "reference": "4a62efe2a02d572d485701fd65d6faeece2ae39a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.0",
+                "symfony/http-foundation": "^4.1.3",
                 "symfony/routing": "^4.1.0",
                 "xervice/data-provider": "^1.1.0"
             },
@@ -2240,7 +2241,7 @@
                     "email": "author@email.de"
                 }
             ],
-            "time": "2018-07-18T06:08:27+00:00"
+            "time": "2018-08-07T11:07:02+00:00"
         },
         {
             "name": "xervice/security",
@@ -2380,22 +2381,22 @@
         },
         {
             "name": "xervice/web",
-            "version": "1.2.4",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/web.git",
-                "reference": "6f46161f725c176796ac78ff600031c66ce94743"
+                "reference": "466e1a5da9c9592b5692119a999bbd2ffd6f97ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/web/zipball/6f46161f725c176796ac78ff600031c66ce94743",
-                "reference": "6f46161f725c176796ac78ff600031c66ce94743",
+                "url": "https://api.github.com/repos/xervice/web/zipball/466e1a5da9c9592b5692119a999bbd2ffd6f97ae",
+                "reference": "466e1a5da9c9592b5692119a999bbd2ffd6f97ae",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.0",
                 "xervice/kernel": "^1.0.0",
-                "xervice/routing": "^1.0.0"
+                "xervice/routing": "^1.1.0"
             },
             "require-dev": {
                 "codeception/codeception": "*",
@@ -2421,7 +2422,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-08-07T06:52:12+00:00"
+            "time": "2018-08-07T11:20:34+00:00"
         }
     ],
     "packages-dev": [
