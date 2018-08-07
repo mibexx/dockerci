@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Twig;
 
 
+use App\User\Business\Twig\UserTwigExtension;
 use Xervice\Atomic\Business\Twig\AtomicTwigExtension;
 use Xervice\Twig\TwigDependencyProvider as XerviceTwigDependencyProvider;
 
@@ -15,7 +16,8 @@ class TwigDependencyProvider extends XerviceTwigDependencyProvider
     protected function getTwigExtensions(): array
     {
         return [
-            new AtomicTwigExtension()
+            new AtomicTwigExtension(),
+            new UserTwigExtension()
         ];
     }
 

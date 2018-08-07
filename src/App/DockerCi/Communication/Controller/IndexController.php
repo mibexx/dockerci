@@ -5,8 +5,13 @@ namespace App\DockerCi\Communication\Controller;
 
 
 use App\Application\Communication\Controller\AbstractTwigController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Xervice\Core\Factory\FactoryInterface;
 
+/**
+ * @method \App\DockerCi\DockerCiFactory getFactory()
+ */
 class IndexController extends AbstractTwigController
 {
     /**
@@ -18,6 +23,16 @@ class IndexController extends AbstractTwigController
      */
     public function indexAction(): Response
     {
-        return $this->sendTwig('pages/index.twig');
+        return ($this->getFactory()->getUserFacade()->getUser())
+            ? $this->getRedirectToDashboard()
+                : $this->sendTwig('pages/index.twig');
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    private function getRedirectToDashboard(): RedirectResponse
+    {
+        return new RedirectResponse('/dashboard');
     }
 }
