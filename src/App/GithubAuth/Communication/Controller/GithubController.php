@@ -44,6 +44,8 @@ class GithubController extends AbstractApiController
         $user = $this->getClient()->getFromGithub($request);
 
         dump($user);
+
+        $this->sendResponse('');
     }
 
     /**
