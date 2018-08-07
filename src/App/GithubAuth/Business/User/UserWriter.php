@@ -73,6 +73,7 @@ class UserWriter implements UserWriterInterface
      * @param string $accesToken
      *
      * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     private function getFromGithub(string $url, string $accesToken): array
     {
@@ -81,7 +82,7 @@ class UserWriter implements UserWriterInterface
             ->setAccessToken($accesToken)
             ->setApiUrl($url);
 
-        return $this->githubClient()->getFromGithub($request);
+        return $this->githubClient->getFromGithub($request);
     }
 
 }
