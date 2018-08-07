@@ -9,8 +9,13 @@ use App\GithubAuth\Business\User\UserWriterInterface;
 use App\User\UserFacade;
 use Xervice\GithubAuth\GithubAuthFactory as XerviceGithubAuthFactory;
 
+/**
+ * @method \App\GithubAuth\GithubAuthConfig getConfig()
+ */
 class GithubAuthFactory extends XerviceGithubAuthFactory
 {
+
+
     /**
      * @return \App\GithubAuth\Business\User\UserWriter
      */
@@ -28,5 +33,13 @@ class GithubAuthFactory extends XerviceGithubAuthFactory
     public function getUserFacade(): UserFacade
     {
         return $this->getDependency(GithubAuthDependencyProvider::USER_FACADE);
+    }
+
+    /**
+     * @return string
+     */
+    public function getRedirectBaseUrl(): string
+    {
+        return $this->getConfig()->getRedirectBaseUrl();
     }
 }

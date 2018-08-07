@@ -1,6 +1,7 @@
 <?php
 
 
+use App\GithubAuth\GithubAuthConfig;
 use Xervice\Database\DatabaseConfig;
 use Xervice\RabbitMQ\RabbitMQConfig;
 use Xervice\Redis\RedisConfig;
@@ -22,3 +23,7 @@ $config[DatabaseConfig::PROPEL_CONF_PORT] = '5432';
 $config[DatabaseConfig::PROPEL_CONF_DBNAME] = 'dockerci';
 $config[DatabaseConfig::PROPEL_CONF_USER] = 'dockerci';
 $config[DatabaseConfig::PROPEL_CONF_PASSWORD] = 'dockerci';
+
+
+// Github
+$config[GithubAuthConfig::REDIRECT_BASE_URL] = 'https://dockerci.mibexx.de';
