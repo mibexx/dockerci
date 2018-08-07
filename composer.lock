@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a69eb677d95459da69b012338e18c9d",
+    "content-hash": "208acb9b3c7058df1ebe7534772e2199",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -2199,16 +2199,16 @@
         },
         {
             "name": "xervice/routing",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/routing.git",
-                "reference": "4a62efe2a02d572d485701fd65d6faeece2ae39a"
+                "reference": "fa5d77b9e1277579aa429832ae8a5f5221bed63c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/routing/zipball/4a62efe2a02d572d485701fd65d6faeece2ae39a",
-                "reference": "4a62efe2a02d572d485701fd65d6faeece2ae39a",
+                "url": "https://api.github.com/repos/xervice/routing/zipball/fa5d77b9e1277579aa429832ae8a5f5221bed63c",
+                "reference": "fa5d77b9e1277579aa429832ae8a5f5221bed63c",
                 "shasum": ""
             },
             "require": {
@@ -2241,7 +2241,7 @@
                     "email": "author@email.de"
                 }
             ],
-            "time": "2018-08-07T11:07:02+00:00"
+            "time": "2018-08-07T11:56:33+00:00"
         },
         {
             "name": "xervice/security",
