@@ -1,8 +1,7 @@
 {% setting data = {
     value: 'Button',
     type: 'primary',
-    class: ''
 } %}
 {% block button %}
-    <input type="submit" value="{{ data.value }}" class="btn btn-{{ data.type }}{% if data.class != "" %} {{ data.class }}{% endif %}"/>
+    <input type="submit" value="{{ data.value }}" class="btn btn-{{ data.type }}"/>
 {% endblock %}
