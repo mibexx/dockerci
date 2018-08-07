@@ -1,8 +1,9 @@
 {% setting data = {
     href: '#',
     value: 'Button',
-    type: 'primary'
+    type: 'primary',
+    class: ''
 } %}
 {% block button %}
-    <a href="{{ data.href }}" class="btn btn-{{ data.type }}">{{ data.value }}</a>
+    <a href="{{ data.href }}" class="btn btn-{{ data.type }}{% if data.class != "" %}{{ data.class }}{% endif %}">{{ data.value }}</a>
 {% endblock %}
