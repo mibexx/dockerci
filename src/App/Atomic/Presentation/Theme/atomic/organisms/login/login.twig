@@ -16,7 +16,7 @@
     <div class="card-body">
         <h4 class="card-title">{{ data.content.title }}</h4>
         <div class="card-text">
-            <form action="{{ data.form.action }}">
+            <form method="post" action="{{ data.form.action }}">
                 <div class="form-group">
                     <div class="input-group">
                         {% embed molecule('input-prepend') with {
