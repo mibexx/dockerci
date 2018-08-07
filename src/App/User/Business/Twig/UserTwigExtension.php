@@ -19,5 +19,7 @@ class UserTwigExtension implements TwigExtensionInterface
         $environment->addExtension(
             new GetUserExtension()
         );
+
+        return $environment;
     }
 }
