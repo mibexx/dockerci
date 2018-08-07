@@ -38,24 +38,22 @@
                         } %}{% endembed %}
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <div class="float-left">
-                            {% embed atom('submit') with {
-                                data: {
-                                    value: 'Login'
-                                }
-                            } %}{% endembed %}
-                        </div>
-                        <div class="float-right">
-                            {% embed atom('button') with {
-                                data: {
-                                    href: '/github/login',
-                                    value: 'Login with github',
-                                    type: 'success',
-                                }
-                            } %}{% endembed %}
-                        </div>
+                <div class="form-group row">
+                    <div class="input-group col-3">
+                        {% embed atom('submit') with {
+                            data: {
+                                value: 'Login'
+                            }
+                        } %}{% endembed %}
+                    </div>
+                    <div class="input-group col-5">
+                        {% embed atom('button') with {
+                            data: {
+                                href: '/github/login',
+                                value: 'Login with github',
+                                type: 'success',
+                            }
+                        } %}{% endembed %}
                     </div>
                 </div>
                 <div class="form-group">
