@@ -40,9 +40,16 @@
                 </div>
                 <div class="form-group">
                     <div class="input-group">
-                        {% embed atom('submit-primary') with {
+                        {% embed atom('submit') with {
                             data: {
                                 value: 'Login'
+                            }
+                        } %}{% endembed %}
+                        {% embed atom('button') with {
+                            data: {
+                                href: '/github/login',
+                                value: 'Login with github',
+                                type: 'success'
                             }
                         } %}{% endembed %}
                     </div>
@@ -54,9 +61,6 @@
                             text: data.content.register
                         }
                     } %}{% endembed %}
-                </div>
-                <div class="form-group">
-                    <a href="/github/login" class="btn btn-success">Login with github</a>
                 </div>
             </form>
         </div>
