@@ -3,6 +3,7 @@
     id: 'input-prepend',
     placeholder: '',
     type: 'text',
+    name: '',
     required: false
 } %}
 
@@ -12,5 +13,5 @@
     </div>
 {% endblock %}
 {% block input %}
-    <input type="{{ data.type }}"{% if data.required %} required="required"{% endif %} class="form-control" id="{{ data.id }}"{% if data.placeholder != "" %} placeholder="{{ data.placeholder }}"{% endif %} />
+    <input type="{{ data.type }}"{% if data.required %} required="required"{% endif %} name="{{ data.name }}" class="form-control" id="{{ data.id }}"{% if data.placeholder != "" %} placeholder="{{ data.placeholder }}"{% endif %} />
 {% endblock %}
