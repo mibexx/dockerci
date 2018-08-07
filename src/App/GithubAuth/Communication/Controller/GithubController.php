@@ -7,12 +7,14 @@ namespace App\GithubAuth\Communication\Controller;
 use DataProvider\GithubAccessTokenRequestDataProvider;
 use DataProvider\GithubAuthRequestDataProvider;
 use DataProvider\GithubRequestDataProvider;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Xervice\Api\Business\Controller\AbstractApiController;
 
 /**
  * @method \Xervice\GithubAuth\GithubAuthFacade getFacade()
+ * @method \App\GithubAuth\GithubAuthFactory getFactory()
  * @method \Xervice\GithubAuth\GithubAuthClient getClient()
  */
 class GithubController extends AbstractApiController
@@ -27,6 +29,14 @@ class GithubController extends AbstractApiController
         $this->getFacade()->authForGithub($auth);
     }
 
+    /**
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @throws \App\User\Business\Exception\AuthentificationException
+     * @throws \Core\Locator\Dynamic\ServiceNotParseable
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     public function authAction(Request $request)
     {
         $token = new GithubAccessTokenRequestDataProvider();
@@ -35,23 +45,10 @@ class GithubController extends AbstractApiController
             ->setRedirectUrl('https://dockerci.mibexx.de/github/oauth');
 
         $token = $this->getFacade()->getAccessToken($token);
+        $newUser = $this->getFactory()->createGithubUserWriter()->addUserFromGithub($token->getAccessToken());
+        $this->getFactory()->getUserFacade()->loginUser($newUser);
 
-        $request = new GithubRequestDataProvider();
-        $request
-            ->setAccessToken($token->getAccessToken())
-            ->setApiUrl('https://api.github.com/user');
-
-        $user = $this->getClient()->getFromGithub($request);
-
-        $request = new GithubRequestDataProvider();
-        $request
-            ->setAccessToken($token->getAccessToken())
-            ->setApiUrl('https://api.github.com/user/emails');
-
-        $email = $this->getClient()->getFromGithub($request);
-        dump($email);
-
-        return $this->sendResponse('');
+        return new RedirectResponse('/');
     }
 
     /**
@@ -61,6 +58,6 @@ class GithubController extends AbstractApiController
      */
     public function oauthAction(Request $request): Response
     {
-        return $this->sendResponse($request->getContent());
+        return $this->sendResponse('');
     }
 }

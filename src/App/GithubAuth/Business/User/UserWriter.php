@@ -9,7 +9,7 @@ use DataProvider\GithubRequestDataProvider;
 use DataProvider\UserDataProvider;
 use Xervice\GithubAuth\Business\Api\GithubClientInterface;
 
-class UserWriter
+class UserWriter implements UserWriterInterface
 {
 
     /**
