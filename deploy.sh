@@ -1,5 +1,6 @@
 #!/bin/bash
 
+git reset --hard HEAD
 git checkout .
 git fetch -vp
 git pull
