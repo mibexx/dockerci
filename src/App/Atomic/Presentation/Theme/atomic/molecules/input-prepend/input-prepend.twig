@@ -2,7 +2,8 @@
     prepend: '@',
     id: 'input-prepend',
     placeholder: '',
-    type: 'text'
+    type: 'text',
+    required: false
 } %}
 
 {% block prepend %}
@@ -11,5 +12,5 @@
     </div>
 {% endblock %}
 {% block input %}
-    <input type="{{ data.type }}" class="form-control" id="{{ data.id }}"{% if data.placeholder != "" %} placeholder="{{ data.placeholder }}"{% endif %} />
+    <input type="{{ data.type }}"{% if data.required %} required="required"{% endif %} class="form-control" id="{{ data.id }}"{% if data.placeholder != "" %} placeholder="{{ data.placeholder }}"{% endif %} />
 {% endblock %}

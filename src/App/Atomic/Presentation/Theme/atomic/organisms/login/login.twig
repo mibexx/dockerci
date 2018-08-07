@@ -22,7 +22,8 @@
                         {% embed molecule('input-prepend') with {
                             data: {
                                 id: 'loginFormUsername',
-                                prepend: data.content.username
+                                prepend: data.content.username,
+                                required: true
                             }
                         } %}{% endembed %}
                     </div>
@@ -33,6 +34,7 @@
                             data: {
                                 id: 'loginFormPassword',
                                 type: 'password',
+                                required: true,
                                 prepend: data.content.password
                             }
                         } %}{% endembed %}
