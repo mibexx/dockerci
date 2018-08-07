@@ -3,6 +3,7 @@
 git fetch -vp
 git reset --hard HEAD
 git checkout .
+git clean -df
 git pull
 
 rm -rf src/Orm/*
