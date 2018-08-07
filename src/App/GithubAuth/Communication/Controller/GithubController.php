@@ -30,7 +30,7 @@ class GithubController extends AbstractApiController
     {
         $token = new GithubAccessTokenRequestDataProvider();
         $token
-            ->setCode($request->query->code);
+            ->setCode($request->query->get('code'));
 
         $token = $this->getFacade()->getAccessToken($token);
 
