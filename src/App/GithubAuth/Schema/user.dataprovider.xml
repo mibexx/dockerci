@@ -7,7 +7,7 @@
 >
 
     <DataProvider name="User">
-        <DataElement name="GithubToken" type="string"/>
+        <DataElement name="Githubtoken" type="string"/>
     </DataProvider>
 
 </DataProviders>
