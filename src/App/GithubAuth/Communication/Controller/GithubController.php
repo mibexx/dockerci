@@ -42,8 +42,15 @@ class GithubController extends AbstractApiController
             ->setApiUrl('https://api.github.com/user');
 
         $user = $this->getClient()->getFromGithub($request);
-
         dump($user);
+
+        $request = new GithubRequestDataProvider();
+        $request
+            ->setAccessToken($token->getAccessToken())
+            ->setApiUrl('https://api.github.com/user/emails');
+
+        $email = $this->getClient()->getFromGithub($request);
+        dump($email);
 
         return $this->sendResponse('');
     }
