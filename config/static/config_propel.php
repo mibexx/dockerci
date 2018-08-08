@@ -41,7 +41,7 @@ $config[DatabaseConfig::PROPEL] = [
         ],
         'paths'     => [
             'projectDir'   => dirname(dirname(__DIR__)),
-            'schemaDir'    => dirname(dirname(__DIR__)) . '/src',
+            'schemaDir'    => dirname(dirname(__DIR__)) . '/',
             'outputDir'    => dirname(dirname(__DIR__)) . '/src/Orm/Output',
             'phpDir'       => dirname(dirname(__DIR__)) . '/src/',
             'migrationDir' => dirname(dirname(__DIR__)) . '/src/Orm/Migrations',
