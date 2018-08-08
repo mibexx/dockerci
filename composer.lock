@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "371daac36caeaa088486af3a7eccce8f",
+    "content-hash": "40d7c1a06303832fa1d0d104184fdd47",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -2199,21 +2199,22 @@
         },
         {
             "name": "xervice/database",
-            "version": "1.3.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/database.git",
-                "reference": "38c07845760331703909d6cbeec1c50f1d5aa146"
+                "reference": "b96358a932a66ec6008bdde135ffb3d3c0880b15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/database/zipball/38c07845760331703909d6cbeec1c50f1d5aa146",
-                "reference": "38c07845760331703909d6cbeec1c50f1d5aa146",
+                "url": "https://api.github.com/repos/xervice/database/zipball/b96358a932a66ec6008bdde135ffb3d3c0880b15",
+                "reference": "b96358a932a66ec6008bdde135ffb3d3c0880b15",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.0",
                 "propel/propel": "2.0.0-alpha8",
+                "symfony/finder": "^4.1.3",
                 "xervice/data-provider": "^1.1.0",
                 "xervice/kernel": "^1.0.0"
             },
@@ -2243,7 +2244,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-07-31T07:03:42+00:00"
+            "time": "2018-08-08T20:29:43+00:00"
         },
         {
             "name": "xervice/event",

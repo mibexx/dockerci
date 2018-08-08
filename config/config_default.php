@@ -55,6 +55,11 @@ $config[DatabaseConfig::PROPEL_CONF_DIR] = __DIR__ . '/propel';
 $config[DatabaseConfig::PROPEL_CONF_ADAPTER] = 'pgsql';
 $config[DatabaseConfig::PROPEL_CONF_HOST] = '127.0.0.1';
 $config[DatabaseConfig::PROPEL_CONF_PORT] = '5432';
+$config[DatabaseConfig::SCHEMA_TARGET] = dirname(__DIR__) . '/src/Orm/Schema';
+$config[DatabaseConfig::SCHEMA_PATHS] = [
+    dirname(__DIR__) . '/src',
+    dirname(__DIR__) . '/vendor/xervice'
+];
 
 // Define static configs
 $config[XerviceConfig::ADDITIONAL_CONFIG_FILES] = [
