@@ -5,6 +5,8 @@ namespace App\User\Communication\Controller;
 
 
 use App\Application\Communication\Controller\AbstractTwigController;
+use DataProvider\UserAuthDataProvider;
+use DataProvider\UserCredentialDataProvider;
 use DataProvider\UserDataProvider;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormBuilder;
@@ -16,7 +18,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Xervice\Controller\Business\Controller\AbstractController;
 
 /**
- * @method \App\User\UserFacade getFacade()
+ * @method \Xervice\User\UserFacade getFacade()
  */
 class UserController extends AbstractTwigController
 {
@@ -24,15 +26,26 @@ class UserController extends AbstractTwigController
      * @param \Symfony\Component\HttpFoundation\Request $request
      *
      * @return \Symfony\Component\HttpFoundation\Response
-     * @throws \App\User\Business\Exception\AuthentificationException
+     * @throws \InvalidArgumentException
      * @throws \Core\Locator\Dynamic\ServiceNotParseable
+     * @throws \Xervice\User\Business\Exception\UserException
      */
     public function loginAction(Request $request): Response
     {
         $username = $request->request->get('username');
         $password = $request->request->get('password');
 
-        $this->getFacade()->loginUser($username, $password);
+        $auth = new UserAuthDataProvider();
+        $auth
+            ->setUser(
+                (new UserDataProvider())->setEmail($username)
+            )
+            ->setCredential(
+                (new UserCredentialDataProvider())->setHash($password)
+            )
+            ->setType('Default');
+
+        $this->getFacade()->login($auth);
 
         return new RedirectResponse('/');
     }

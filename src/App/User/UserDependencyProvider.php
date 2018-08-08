@@ -1,32 +1,21 @@
 <?php
-declare(strict_types=1);
+
 
 namespace App\User;
 
 
-use Xervice\Core\Dependency\DependencyProviderInterface;
-use Xervice\Core\Dependency\Provider\AbstractProvider;
+use Xervice\GithubAuth\Business\User\GithubLogin;
+use Xervice\User\Business\Authenticator\Login\DefaultLogin;
+use Xervice\User\UserDependencyProvider as XerviceUserDependencyProvider;
 
-/**
- * @method \Xervice\Core\Locator\Locator getLocator()
- */
-class UserDependencyProvider extends AbstractProvider
+class UserDependencyProvider extends XerviceUserDependencyProvider
 {
-    public const USER_QUERY = 'user.query';
-
-    public const SESSION_CLIENT = 'session.cient';
-
-    /**
-     * @param \Xervice\Core\Dependency\DependencyProviderInterface $dependencyProvider
-     */
-    public function handleDependencies(DependencyProviderInterface $dependencyProvider): void
+    protected function getLoginPluginList(): array
     {
-        $dependencyProvider[self::USER_QUERY] = function (DependencyProviderInterface $dependencyProvider) {
-            return $dependencyProvider->getLocator()->user()->queryContainer();
-        };
-
-        $dependencyProvider[self::SESSION_CLIENT] = function (DependencyProviderInterface $dependencyProvider) {
-            return $dependencyProvider->getLocator()->session()->client();
-        };
+        return [
+            'Default' => new DefaultLogin(),
+            'Github'  => new GithubLogin()
+        ];
     }
+
 }

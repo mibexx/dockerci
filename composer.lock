@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "392e2b39d77b9b8033169d782e1e24cb",
+    "content-hash": "371daac36caeaa088486af3a7eccce8f",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -1617,96 +1617,6 @@
             "time": "2018-07-26T11:24:31+00:00"
         },
         {
-            "name": "symfony/twig-bridge",
-            "version": "v4.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/twig-bridge.git",
-                "reference": "0fdf6b2e69c514e1b178ee823dd6bc9950db4a2f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/twig-bridge/zipball/0fdf6b2e69c514e1b178ee823dd6bc9950db4a2f",
-                "reference": "0fdf6b2e69c514e1b178ee823dd6bc9950db4a2f",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3",
-                "twig/twig": "^1.35|^2.4.4"
-            },
-            "conflict": {
-                "symfony/console": "<3.4",
-                "symfony/form": "<4.1.2"
-            },
-            "require-dev": {
-                "symfony/asset": "~3.4|~4.0",
-                "symfony/console": "~3.4|~4.0",
-                "symfony/dependency-injection": "~3.4|~4.0",
-                "symfony/expression-language": "~3.4|~4.0",
-                "symfony/finder": "~3.4|~4.0",
-                "symfony/form": "^4.1.2",
-                "symfony/http-foundation": "~3.4|~4.0",
-                "symfony/http-kernel": "~3.4|~4.0",
-                "symfony/polyfill-intl-icu": "~1.0",
-                "symfony/routing": "~3.4|~4.0",
-                "symfony/security": "~3.4|~4.0",
-                "symfony/security-acl": "~2.8|~3.0",
-                "symfony/stopwatch": "~3.4|~4.0",
-                "symfony/templating": "~3.4|~4.0",
-                "symfony/translation": "~3.4|~4.0",
-                "symfony/var-dumper": "~3.4|~4.0",
-                "symfony/web-link": "~3.4|~4.0",
-                "symfony/workflow": "~3.4|~4.0",
-                "symfony/yaml": "~3.4|~4.0"
-            },
-            "suggest": {
-                "symfony/asset": "For using the AssetExtension",
-                "symfony/expression-language": "For using the ExpressionExtension",
-                "symfony/finder": "",
-                "symfony/form": "For using the FormExtension",
-                "symfony/http-kernel": "For using the HttpKernelExtension",
-                "symfony/routing": "For using the RoutingExtension",
-                "symfony/security": "For using the SecurityExtension",
-                "symfony/stopwatch": "For using the StopwatchExtension",
-                "symfony/templating": "For using the TwigEngine",
-                "symfony/translation": "For using the TranslationExtension",
-                "symfony/var-dumper": "For using the DumpExtension",
-                "symfony/web-link": "For using the WebLinkExtension",
-                "symfony/yaml": "For using the YamlExtension"
-            },
-            "type": "symfony-bridge",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Bridge\\Twig\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Twig Bridge",
-            "homepage": "https://symfony.com",
-            "time": "2018-07-26T11:24:31+00:00"
-        },
-        {
             "name": "symfony/validator",
             "version": "v4.1.3",
             "source": {
@@ -2197,16 +2107,16 @@
         },
         {
             "name": "xervice/core",
-            "version": "3.6.0",
+            "version": "3.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/core.git",
-                "reference": "52dd9e900e026b3afd5d40ab0b23a6e3e43098f0"
+                "reference": "2615e80c643d761fc0d2fa87892489b465307ca4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/core/zipball/52dd9e900e026b3afd5d40ab0b23a6e3e43098f0",
-                "reference": "52dd9e900e026b3afd5d40ab0b23a6e3e43098f0",
+                "url": "https://api.github.com/repos/xervice/core/zipball/2615e80c643d761fc0d2fa87892489b465307ca4",
+                "reference": "2615e80c643d761fc0d2fa87892489b465307ca4",
                 "shasum": ""
             },
             "require": {
@@ -2239,20 +2149,20 @@
                 }
             ],
             "description": "Xervice core functionality",
-            "time": "2018-08-06T08:21:38+00:00"
+            "time": "2018-08-08T08:30:51+00:00"
         },
         {
             "name": "xervice/data-provider",
-            "version": "1.4.4",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/data-provider.git",
-                "reference": "b1782e77c076a513c0a014732cbda3b6804a2d88"
+                "reference": "6dc464b49d370240ef6631242d3941705161c48c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/data-provider/zipball/b1782e77c076a513c0a014732cbda3b6804a2d88",
-                "reference": "b1782e77c076a513c0a014732cbda3b6804a2d88",
+                "url": "https://api.github.com/repos/xervice/data-provider/zipball/6dc464b49d370240ef6631242d3941705161c48c",
+                "reference": "6dc464b49d370240ef6631242d3941705161c48c",
                 "shasum": ""
             },
             "require": {
@@ -2285,7 +2195,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-07-26T08:27:53+00:00"
+            "time": "2018-08-08T08:05:52+00:00"
         },
         {
             "name": "xervice/database",
@@ -2474,22 +2384,26 @@
         },
         {
             "name": "xervice/github-oauth",
-            "version": "1.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/github-oauth.git",
-                "reference": "b7f6fec618e523024f3afb2be0177f3aa0d896f4"
+                "reference": "c9cd0ce1b926e0a28de7e5063300879ca99aa9bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/github-oauth/zipball/b7f6fec618e523024f3afb2be0177f3aa0d896f4",
-                "reference": "b7f6fec618e523024f3afb2be0177f3aa0d896f4",
+                "url": "https://api.github.com/repos/xervice/github-oauth/zipball/c9cd0ce1b926e0a28de7e5063300879ca99aa9bf",
+                "reference": "c9cd0ce1b926e0a28de7e5063300879ca99aa9bf",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^6.3.3",
                 "php": ">=7.1.0",
-                "xervice/data-provider": "^1.4.4"
+                "propel/propel": "2.0.0-alpha8",
+                "xervice/controller": "1.2.0",
+                "xervice/data-provider": "^1.4.4",
+                "xervice/logger": "^1.0.0",
+                "xervice/user": "^1.1.1"
             },
             "require-dev": {
                 "codeception/codeception": "*",
@@ -2502,7 +2416,8 @@
                     "DataProvider\\": "src/Generated/"
                 },
                 "psr-0": {
-                    "Xervice\\": "src/"
+                    "Xervice\\": "src/",
+                    "Orm\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2515,7 +2430,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-08-07T08:53:11+00:00"
+            "time": "2018-08-08T19:37:56+00:00"
         },
         {
             "name": "xervice/kernel",
@@ -2836,16 +2751,16 @@
         },
         {
             "name": "xervice/session",
-            "version": "1.3.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/session.git",
-                "reference": "a7ae257bc4399e73e9b9b06bdfd8526636743228"
+                "reference": "5961bda3ca784ad7d58e18e0fc11ba4aac530b5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/session/zipball/a7ae257bc4399e73e9b9b06bdfd8526636743228",
-                "reference": "a7ae257bc4399e73e9b9b06bdfd8526636743228",
+                "url": "https://api.github.com/repos/xervice/session/zipball/5961bda3ca784ad7d58e18e0fc11ba4aac530b5d",
+                "reference": "5961bda3ca784ad7d58e18e0fc11ba4aac530b5d",
                 "shasum": ""
             },
             "require": {
@@ -2876,7 +2791,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-07-23T09:47:40+00:00"
+            "time": "2018-08-08T18:51:26+00:00"
         },
         {
             "name": "xervice/twig",
@@ -2924,6 +2839,54 @@
                 }
             ],
             "time": "2018-08-01T12:13:23+00:00"
+        },
+        {
+            "name": "xervice/user",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xervice/user.git",
+                "reference": "fe954a45836d1e398dc96cc523aa84e6d15bab15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xervice/user/zipball/fe954a45836d1e398dc96cc523aa84e6d15bab15",
+                "reference": "fe954a45836d1e398dc96cc523aa84e6d15bab15",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0",
+                "propel/propel": "2.0.0-alpha8",
+                "xervice/data-provider": "^1.4.4",
+                "xervice/database": "^1.3.0",
+                "xervice/session": "^1.3.0"
+            },
+            "require-dev": {
+                "codeception/codeception": "*",
+                "symfony/var-dumper": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "XerviceTest\\": "tests/Xervice/",
+                    "DataProvider\\": "src/Generated/"
+                },
+                "psr-0": {
+                    "Xervice\\": "src/",
+                    "Orm\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Bertram",
+                    "email": "contact@mibexx.de"
+                }
+            ],
+            "time": "2018-08-08T19:05:15+00:00"
         },
         {
             "name": "xervice/web",

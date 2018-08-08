@@ -1,8 +1,8 @@
 <?php
 
 
-use App\GithubAuth\GithubAuthConfig;
 use Xervice\Database\DatabaseConfig;
+use Xervice\GithubAuth\GithubAuthConfig;
 use Xervice\RabbitMQ\RabbitMQConfig;
 use Xervice\Redis\RedisConfig;
 

@@ -1,7 +1,7 @@
 {% setting data = {
     content: {
         title: 'Register',
-        username: 'E-Mail',
+        email: 'E-Mail',
         password: 'Password',
         firstname: 'Firstname',
         lastname: 'Lastname',
@@ -31,7 +31,7 @@
                         {% embed molecule('input-prepend') with {
                             data: {
                                 id: 'loginFormEmail',
-                                prepend: data.content.username,
+                                prepend: data.content.email,
                                 name: 'registerForm[Email]',
                                 required: true,
                                 value: data.form.data.Email

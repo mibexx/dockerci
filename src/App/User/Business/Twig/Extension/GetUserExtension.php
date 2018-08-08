@@ -7,7 +7,7 @@ namespace App\User\Business\Twig\Extension;
 use Xervice\Core\Locator\Dynamic\DynamicLocator;
 
 /**
- * @method \App\User\UserFacade getFacade()
+ * @method \Xervice\User\UserFacade getFacade()
  */
 class GetUserExtension extends \Twig_Extension
 {
@@ -17,13 +17,14 @@ class GetUserExtension extends \Twig_Extension
 
     /**
      * @return array|\Twig_Function[]
+     * @throws \Core\Locator\Dynamic\ServiceNotParseable
      */
     public function getFunctions()
     {
         return [
             new \Twig_SimpleFunction(
                 self::FUNCTION_NAME,
-                $this->getFacade()->getUser(),
+                $this->getFacade()->getLoggedUser(),
                 [
                     $this,
                     self::FUNCTION_NAME
