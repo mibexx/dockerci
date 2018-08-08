@@ -4,13 +4,13 @@
 namespace App\DockerCi;
 
 
-use App\User\UserFacade;
 use Xervice\Core\Factory\AbstractFactory;
+use Xervice\User\UserFacade;
 
 class DockerCiFactory extends AbstractFactory
 {
     /**
-     * @return \App\User\UserFacade
+     * @return \Xervice\User\UserFacade
      */
     public function getUserFacade(): UserFacade
     {

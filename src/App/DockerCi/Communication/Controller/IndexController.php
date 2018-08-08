@@ -23,7 +23,7 @@ class IndexController extends AbstractTwigController
      */
     public function indexAction(): Response
     {
-        return ($this->getFactory()->getUserFacade()->getUser())
+        return ($this->getFactory()->getUserFacade()->getLoggedUser())
             ? $this->getRedirectToDashboard()
                 : $this->sendTwig('pages/index.twig');
     }
