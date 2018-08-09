@@ -48,10 +48,10 @@ class LogToFileHandler implements LogToFileHandlerInterface
 
         $message = $messageDataProvider->getTitle()
                    . PHP_EOL
-                   . $messageDataProvider->getMessage()
+                   . ($messageDataProvider->hasMessage() ? $messageDataProvider->getMessage() : '')
                    . PHP_EOL
                    . PHP_EOL
-                   . $messageDataProvider->getContext()
+                   . ($messageDataProvider->hasContext() ? $messageDataProvider->getContext() : '')
                    . PHP_EOL
                    . '----------------------------------'
                    . PHP_EOL;
