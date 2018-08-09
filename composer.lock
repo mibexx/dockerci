@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb50b7189cc68384aea9a5896e7ac463",
+    "content-hash": "c4d58c28406f5ba4ea419ade9ad86546",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -2385,16 +2385,16 @@
         },
         {
             "name": "xervice/github-oauth",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/github-oauth.git",
-                "reference": "7c99b734a9cd11e699a7282af3922002c1323eef"
+                "reference": "527d8ad68b74bea727a06c00e4b5361a40fcef84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/github-oauth/zipball/7c99b734a9cd11e699a7282af3922002c1323eef",
-                "reference": "7c99b734a9cd11e699a7282af3922002c1323eef",
+                "url": "https://api.github.com/repos/xervice/github-oauth/zipball/527d8ad68b74bea727a06c00e4b5361a40fcef84",
+                "reference": "527d8ad68b74bea727a06c00e4b5361a40fcef84",
                 "shasum": ""
             },
             "require": {
@@ -2431,7 +2431,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-08-09T07:08:46+00:00"
+            "time": "2018-08-09T07:20:50+00:00"
         },
         {
             "name": "xervice/kernel",

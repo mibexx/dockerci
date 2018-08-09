@@ -29,7 +29,7 @@
     "xervice/redis": "^1.2.0",
     "xervice/atomic": "1.0.0",
     "xervice/user": "^1.1.2",
-    "xervice/github-oauth": "^2.1.1",
+    "xervice/github-oauth": "^2.1.2",
     "symfony/form": "^4.1.3",
     "propel/propel": "2.0.0-alpha8"
   },
