@@ -110,13 +110,12 @@ class UserController extends AbstractTwigController
      *
      * @return \DataProvider\UserLoginDataProvider
      */
-    private
-    function getUserLoginFromData(
-        $userData
+    private function getUserLoginFromData(
+        array $userData
     ): \DataProvider\UserLoginDataProvider {
         $credentials = new UserCredentialDataProvider();
         $credentials
-            ->setHash(password_hash($userData['password'], PASSWORD_BCRYPT));
+            ->setHash(password_hash($userData['Password'], PASSWORD_BCRYPT));
 
         $login = new UserLoginDataProvider();
         $login
