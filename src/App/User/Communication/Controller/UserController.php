@@ -8,17 +8,14 @@ use App\Application\Communication\Controller\AbstractTwigController;
 use DataProvider\UserAuthDataProvider;
 use DataProvider\UserCredentialDataProvider;
 use DataProvider\UserDataProvider;
-use Symfony\Component\Form\Extension\Core\Type\FormType;
-use Symfony\Component\Form\FormBuilder;
-use Symfony\Component\Form\FormFactory;
-use Symfony\Component\Form\Forms;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Xervice\Controller\Business\Controller\AbstractController;
+use Xervice\User\Business\Exception\UserException;
 
 /**
  * @method \Xervice\User\UserFacade getFacade()
+ * @method \Xervice\User\UserFactory getFactory()
  */
 class UserController extends AbstractTwigController
 {
@@ -45,9 +42,14 @@ class UserController extends AbstractTwigController
             )
             ->setType('Default');
 
-        $this->getFacade()->login($auth);
+        $suffix = '';
+        try {
+            $this->getFacade()->login($auth);
+        } catch (UserException $exception) {
+            $suffix = '?error=1';
+        }
 
-        return new RedirectResponse('/');
+        return new RedirectResponse('/' . $suffix);
     }
 
     /**

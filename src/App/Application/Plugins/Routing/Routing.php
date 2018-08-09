@@ -5,6 +5,7 @@ namespace App\Application\Plugins\Routing;
 
 
 use App\DockerCi\Communication\Controller\IndexController;
+use App\User\Communication\Controller\UserController;
 use DataProvider\RouteCollectionDataProvider;
 use Xervice\Controller\Business\Route\AbstractControllerProvider;
 use Xervice\GithubAuth\Communication\Controller\GithubController;

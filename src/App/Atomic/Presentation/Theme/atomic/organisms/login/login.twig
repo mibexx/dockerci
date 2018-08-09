@@ -4,7 +4,8 @@
         email: 'E-Mail',
         password: 'Password',
         button: 'Login',
-        register: 'Create new account'
+        register: 'Create new account',
+        error: 'Login failed'
     },
     form: {
         action: '/login',
@@ -14,6 +15,9 @@
 
 <div class="card">
     <div class="card-body">
+        <div class="alert alert-danger" role="alert">
+            {{ data.content.error }}
+        </div>
         <h4 class="card-title">{{ data.content.title }}</h4>
         <div class="card-text">
             <form action="{{ data.form.action }}" method="post">

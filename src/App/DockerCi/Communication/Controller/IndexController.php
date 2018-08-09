@@ -6,6 +6,7 @@ namespace App\DockerCi\Communication\Controller;
 
 use App\Application\Communication\Controller\AbstractTwigController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Xervice\Core\Factory\FactoryInterface;
 
@@ -21,11 +22,11 @@ class IndexController extends AbstractTwigController
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
      */
-    public function indexAction(): Response
+    public function indexAction(Request $request): Response
     {
         return ($this->getFactory()->getUserFacade()->getLoggedUser())
             ? $this->getRedirectToDashboard()
-                : $this->sendTwig('pages/index.twig');
+                : $this->sendTwig('pages/index.twig', [ 'error' => $request->query->has('error') ? $request->query->get('error') : '' ]);
     }
 
     /**
