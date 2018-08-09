@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb51194441971a0f80a39204342d5480",
+    "content-hash": "ac63c77855f52a8f6ad251e8a4165a70",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -2843,16 +2843,16 @@
         },
         {
             "name": "xervice/user",
-            "version": "1.3.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/user.git",
-                "reference": "f81a43dedb235e45a99f3ff6b5e47176d4d51d68"
+                "reference": "98523f227339d6aa3f8989e2dc758f547c38ed98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/user/zipball/f81a43dedb235e45a99f3ff6b5e47176d4d51d68",
-                "reference": "f81a43dedb235e45a99f3ff6b5e47176d4d51d68",
+                "url": "https://api.github.com/repos/xervice/user/zipball/98523f227339d6aa3f8989e2dc758f547c38ed98",
+                "reference": "98523f227339d6aa3f8989e2dc758f547c38ed98",
                 "shasum": ""
             },
             "require": {
@@ -2887,7 +2887,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-08-09T09:13:08+00:00"
+            "time": "2018-08-09T10:37:34+00:00"
         },
         {
             "name": "xervice/web",
