@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\RabbitMQ;
 
 
+use App\LogRabbitMq\Business\Listener\LogToFileListener;
 use Xervice\EventRabbitMq\Business\Listener\QueueListener;
 use Xervice\EventRabbitMq\Business\Queue\EventExchange;
 use Xervice\EventRabbitMq\Business\Queue\EventQueue;
@@ -37,11 +38,13 @@ class RabbitMQDependencyProvider extends XerviceRabbitMQDependencyProvider
 
     /**
      * @return \Xervice\RabbitMQ\Worker\Listener\ListenerInterface[]
+     * @throws \Core\Locator\Dynamic\ServiceNotParseable
      */
     protected function getListener(): array
     {
         return [
-            new QueueListener()
+            new QueueListener(),
+            new LogToFileListener()
         ];
     }
 }
