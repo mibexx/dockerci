@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Application\Plugins\Routing;
 
 
+use App\DockerCi\Communication\Controller\DashboardController;
 use App\DockerCi\Communication\Controller\IndexController;
 use App\User\Communication\Controller\UserController;
 use DataProvider\RouteCollectionDataProvider;
@@ -40,6 +41,8 @@ class Routing extends AbstractControllerProvider
          $this->addRoute(GithubAuthConfig::LOGIN_PATH, GithubController::class, 'githubLoginAction', ['GET']);
          $this->addRoute(GithubAuthConfig::AUTH_PATH, GithubController::class, 'githubAuthAction', ['GET']);
          $this->addRoute(GithubAuthConfig::ERROR_PATH, GithubController::class, 'githubError', ['GET']);
+
+         $this->addRoute(DashboardController::INDEX_ROUTE, DashboardController::class, 'indexAction', ['GET']);
     }
 
     /**
