@@ -7,7 +7,9 @@
         lastname: 'Lastname',
         company: 'Company',
         button: 'Register',
-        register: 'Create new account'
+        register: 'Create new account',
+        error: 'Your registration has failed',
+        success: 'Registration successfull'
     },
     form: {
         action: '/register',
@@ -18,11 +20,24 @@
             Lastname: '',
             Company: '',
         }
+    },
+    alert: {
+        state: 0
     }
 } %}
 
 <div class="card">
     <div class="card-body">
+        {% if data.alert.state == -1 %}
+            <div class="alert alert-danger" role="alert">
+                {{ data.content.error }}
+            </div>
+        {% endif %}
+        {% if data.alert.state == 1 %}
+            <div class="alert alert-success" role="alert">
+                {{ data.content.success }}
+            </div>
+        {% endif %}
         <h4 class="card-title">{{ data.content.title }}</h4>
         <div class="card-text">
             <form action="{{ data.form.action }}" method="post">

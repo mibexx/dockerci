@@ -8,6 +8,7 @@ use App\Application\Communication\Controller\AbstractTwigController;
 use DataProvider\UserAuthDataProvider;
 use DataProvider\UserCredentialDataProvider;
 use DataProvider\UserDataProvider;
+use DataProvider\UserLoginDataProvider;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -40,12 +41,14 @@ class UserController extends AbstractTwigController
             ->setCredential(
                 (new UserCredentialDataProvider())->setHash($password)
             )
-            ->setType('Default');
+            ->setType('Default')
+        ;
 
         $suffix = '';
         try {
             $this->getFacade()->login($auth);
-        } catch (UserException $exception) {
+        }
+        catch (UserException $exception) {
             $suffix = '?error=1';
         }
 
@@ -72,22 +75,81 @@ class UserController extends AbstractTwigController
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
+     * @throws \Xervice\User\Business\Exception\UserException
      */
     public function registerAction(Request $request): Response
     {
         $user = new UserDataProvider();
+        $state = '0';
         if ($request->request->has('registerForm')) {
-            $user->fromArray($request->request->get('registerForm'));
+            $state = -1;
+            $userData = $request->request->get('registerForm');
 
-            $user = $this->getFacade()->registerUser($user);
-            if ($user->hasUserId()) {
-                $this->getFacade()->loginUserWithoutAuthentification($user);
-                return new RedirectResponse('/');
+            $user->fromArray($userData);
+
+            $user = $this->getFacade()->getUserFromEmail($user->getEmail());
+
+            try {
+                $user = $this->createOrUpdateUser($user, $userData);
+                $state = 1;
+            } catch (UserException $exception) {
             }
         }
 
-        return $this->sendTwig('pages/register.twig', [
-            'registerForm' => $user->toArray()
-        ]);
+        return $this->sendTwig(
+            'pages/register.twig',
+            [
+                'registerForm' => $user->toArray(),
+                'state'        => $state
+            ]
+        );
     }
+
+    /**
+     * @param $userData
+     *
+     * @return \DataProvider\UserLoginDataProvider
+     */
+    private
+    function getUserLoginFromData(
+        $userData
+    ): \DataProvider\UserLoginDataProvider {
+        $credentials = new UserCredentialDataProvider();
+        $credentials
+            ->setHash(password_hash($userData['password'], PASSWORD_BCRYPT));
+
+        $login = new UserLoginDataProvider();
+        $login
+            ->setUserCredential($credentials);
+        return $login;
+    }
+
+    /**
+     * @param $user
+     * @param $userData
+     *
+     * @return \DataProvider\UserDataProvider
+     * @throws \Core\Locator\Dynamic\ServiceNotParseable
+     * @throws \Propel\Runtime\Exception\PropelException
+     * @throws \Xervice\User\Business\Exception\UserException
+     */
+    private function createOrUpdateUser($user, $userData): UserDataProvider
+    {
+        if ($user->hasUserId()) {
+            $login = $this->getFacade()->getLoginFromUserByType($user->getUserId(), 'Default');
+            if (!$login->hasUserLoginId()) {
+                $login = $this->getUserLoginFromData($userData);
+                $user->addUserLogin($login);
+                $this->getFacade()->updateUser($user);
+            } else {
+                throw new UserException('User already exist');
+            }
+        } else {
+            $login = $this->getUserLoginFromData($userData);
+            $user->addUserLogin($login);
+            $user = $this->getFacade()->createUser($user);
+        }
+
+        return $user;
+}
 }
