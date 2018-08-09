@@ -7,6 +7,9 @@
         register: 'Create new account',
         error: 'Login failed'
     },
+    alert: {
+        error: 0
+    },
     form: {
         action: '/login',
         register: '/register'
@@ -15,9 +18,11 @@
 
 <div class="card">
     <div class="card-body">
-        <div class="alert alert-danger" role="alert">
-            {{ data.content.error }}
-        </div>
+        {% if data.alert.error == 1 %}
+            <div class="alert alert-danger" role="alert">
+                {{ data.content.error }}
+            </div>
+        {% endif %}
         <h4 class="card-title">{{ data.content.title }}</h4>
         <div class="card-text">
             <form action="{{ data.form.action }}" method="post">

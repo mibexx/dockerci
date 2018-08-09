@@ -4,7 +4,13 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col col-lg-4">
-                {% embed organism('login') %}{% endembed %}
+                {% embed organism('login') with {
+                    data: {
+                        alert: {
+                            error: error
+                        }
+                    }
+                } %}{% endembed %}
             </div>
         </div>
     </div>
