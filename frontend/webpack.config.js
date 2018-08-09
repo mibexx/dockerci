@@ -96,6 +96,13 @@ module.exports = {
                         outputPath: '/css/fonts/'
                     }
                 }]
+            },
+            {
+                test: /\.tsx?$/,
+                use: [{
+                    loader: 'ts-loader'
+                }],
+                exclude: /node_modules/
             }
         ]
     },
