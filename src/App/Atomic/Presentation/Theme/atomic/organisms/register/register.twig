@@ -9,11 +9,13 @@
         button: 'Register',
         register: 'Create new account',
         error: 'Your registration has failed',
-        success: 'Registration successfull'
+        success: 'Registration successfull',
+        back: 'Back to login'
     },
     form: {
         action: '/register',
         register: '/register',
+        back: '/',
         data: {
             Email: '',
             Firstname: '',
@@ -111,6 +113,14 @@
                             }
                         } %}{% endembed %}
                     </div>
+                </div>
+                <div class="form-group">
+                    {% embed atom('link') with {
+                        data: {
+                            href: data.form.back,
+                            text: data.content.back
+                        }
+                    } %}{% endembed %}
                 </div>
             </form>
         </div>
