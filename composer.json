@@ -28,8 +28,8 @@
     "xervice/session": "^1.3.0",
     "xervice/redis": "^1.2.0",
     "xervice/atomic": "1.0.0",
-    "xervice/user": "^1.1.3",
-    "xervice/github-oauth": "^2.1.4",
+    "xervice/user": "^1.3.0",
+    "xervice/github-oauth": "^2.2.0",
     "symfony/form": "^4.1.3",
     "propel/propel": "2.0.0-alpha8"
   },
