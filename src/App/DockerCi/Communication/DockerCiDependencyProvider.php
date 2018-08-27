@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\DockerCi;
+namespace App\DockerCi\Communication;
 
 use Xervice\Core\Business\Model\Dependency\DependencyContainerInterface;
 use Xervice\Core\Business\Model\Dependency\Provider\AbstractDependencyProvider;
