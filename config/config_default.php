@@ -11,7 +11,9 @@ use Xervice\RabbitMQ\RabbitMQConfig;
 use Xervice\Redis\RedisConfig;
 
 // Core
-$config[CoreConfig::PROJECT_LAYER_NAMESPACE] = 'App';
+$config[CoreConfig::PROJECT_NAMESPACES] = [
+    'App'
+];
 
 // Debug
 $config[ExceptionHandlerConfig::IS_DEBUG] = true;
