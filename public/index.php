@@ -1,6 +1,7 @@
 <?php
 
-use Xervice\Core\Locator\Locator;
+
+use Xervice\Core\Business\Model\Locator\Locator;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
