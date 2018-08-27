@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Event;
+namespace App\Event\Business;
 
 
 use Xervice\Event\Business\EventBusinessFactory as XerviceEventBusinessFactory;

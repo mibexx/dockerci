@@ -8,19 +8,20 @@ use App\Application\Communication\Controller\AbstractTwigController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Xervice\Core\Factory\FactoryInterface;
 
 /**
- * @method \App\DockerCi\DockerCiFactory getFactory()
+ * @method \App\DockerCi\DockerCiCommunicationFactory getFactory()
  */
 class IndexController extends AbstractTwigController
 {
     /**
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     *
      * @return \Symfony\Component\HttpFoundation\Response
-     * @throws \Core\Locator\Dynamic\ServiceNotParseable
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
+     * @throws \Xervice\Core\Business\Exception\ServiceNotFoundException
      */
     public function indexAction(Request $request): Response
     {

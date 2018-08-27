@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\LogRabbitMq;
+namespace App\LogRabbitMq\Business;
 
 
 use App\LogRabbitMq\Business\Model\FileLogger\LogToFileHandler;

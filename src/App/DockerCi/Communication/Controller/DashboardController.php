@@ -13,10 +13,10 @@ class DashboardController extends AbstractTwigController
 
     /**
      * @return \Symfony\Component\HttpFoundation\Response
-     * @throws \Core\Locator\Dynamic\ServiceNotParseable
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
+     * @throws \Xervice\Core\Business\Exception\ServiceNotFoundException
      */
     public function indexAction(): Response
     {

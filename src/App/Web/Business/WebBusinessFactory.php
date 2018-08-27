@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Web;
+namespace App\Web\Business;
 
 
 use Xervice\Controller\Business\Model\ResponseHandler\ControllerResponseHandler;

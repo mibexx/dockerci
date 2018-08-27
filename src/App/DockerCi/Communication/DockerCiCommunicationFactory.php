@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\DockerCi;
+namespace App\DockerCi\Communication;
 
 
 use Xervice\Core\Business\Model\Factory\AbstractCommunicationFactory;
