@@ -6,7 +6,7 @@ namespace App\Xervice\Business\ExceptionRegister;
 
 use Whoops\Handler\PrettyPageHandler;
 use Whoops\Run;
-use Xervice\ExceptionHandler\Business\Register\RegisterInterface;
+use Xervice\ExceptionHandler\Business\Model\Register\RegisterInterface;
 
 class WhoopsExceptionHandler implements RegisterInterface
 {

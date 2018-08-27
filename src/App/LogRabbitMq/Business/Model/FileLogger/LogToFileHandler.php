@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\LogRabbitMq\Business\FileLogger;
+namespace App\LogRabbitMq\Business\Model\FileLogger;
 
 
 use DataProvider\LogMessageDataProvider;

@@ -8,7 +8,7 @@ use App\DockerCi\Communication\Controller\DashboardController;
 use App\DockerCi\Communication\Controller\IndexController;
 use App\User\Communication\Controller\UserController;
 use DataProvider\RouteCollectionDataProvider;
-use Xervice\Controller\Business\Route\AbstractControllerProvider;
+use Xervice\Controller\Business\Model\Route\AbstractControllerProvider;
 use Xervice\GithubAuth\Communication\Controller\GithubController;
 use Xervice\GithubAuth\GithubAuthConfig;
 

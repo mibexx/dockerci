@@ -4,15 +4,15 @@ declare(strict_types=1);
 namespace App\Kernel;
 
 
-use Xervice\Api\Business\Kernel\ApiAuthService;
-use Xervice\Database\Kernel\DatabaseService;
-use Xervice\ExceptionHandler\Business\Kernel\ExceptionService;
+use Xervice\Api\Communication\Plugin\ApiAuthService;
+use Xervice\Database\Communication\Plugin\DatabaseService;
+use Xervice\ExceptionHandler\Business\Model\Kernel\ExceptionService;
 use Xervice\Kernel\KernelDependencyProvider as XerviceKernelDependencyProvider;
-use Xervice\RabbitMQ\Kernel\RabbitMqService;
-use Xervice\Redis\Kernel\RedisService;
-use Xervice\Session\Business\Kernel\SessionService;
-use Xervice\Twig\Business\Kernel\TwigService;
-use Xervice\Web\Business\Kernel\WebService;
+use Xervice\RabbitMQ\Communication\Plugin\RabbitMqService;
+use Xervice\Redis\Communication\Plugin\RedisService;
+use Xervice\Session\Communication\Plugin\SessionService;
+use Xervice\Twig\Communication\Plugin\TwigService;
+use Xervice\Web\Communication\Plugin\WebService;
 
 class KernelDependencyProvider extends XerviceKernelDependencyProvider
 {

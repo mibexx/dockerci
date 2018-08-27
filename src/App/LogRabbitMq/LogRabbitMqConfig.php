@@ -4,9 +4,10 @@
 namespace App\LogRabbitMq;
 
 
-use Xervice\Config\XerviceConfig;
+use Xervice\Config\Business\XerviceConfig;
+use Xervice\LogRabbitMq\LogRabbitMqConfig as XerviceLogRabbitMqConfig;
 
-class LogRabbitMqConfig extends \Xervice\LogRabbitMq\LogRabbitMqConfig
+class LogRabbitMqConfig extends XerviceLogRabbitMqConfig
 {
     public const LOG_FILENAME = 'lograbbitmq.log.filename';
 

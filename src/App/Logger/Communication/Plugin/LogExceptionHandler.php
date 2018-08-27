@@ -1,23 +1,21 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Logger\Business\ExceptionHandler;
+namespace App\Logger\Communication\Plugin;
 
 
 use DataProvider\LogMessageDataProvider;
-use Xervice\Core\Locator\AbstractWithLocator;
-use Xervice\ExceptionHandler\Business\Handler\ExceptionHandlerInterface;
+use Xervice\Core\Plugin\AbstractCommunicationPlugin;
+use Xervice\ExceptionHandler\Business\Model\Handler\ExceptionHandlerInterface;
 
 /**
- * @method \Xervice\Logger\LoggerFacade getFacade()
+ * @method \Xervice\Logger\Business\LoggerFacade getFacade()
  */
-class LogExceptionHandler extends AbstractWithLocator implements ExceptionHandlerInterface
+class LogExceptionHandler extends AbstractCommunicationPlugin implements ExceptionHandlerInterface
 {
     /**
      * @param \Throwable $exception
      * @param bool $isDebug
-     *
-     * @throws \Core\Locator\Dynamic\ServiceNotParseable
      */
     public function handleException(\Throwable $exception, bool $isDebug): void
     {

@@ -15,8 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Xervice\User\Business\Exception\UserException;
 
 /**
- * @method \Xervice\User\UserFacade getFacade()
- * @method \Xervice\User\UserFactory getFactory()
+ * @method \Xervice\User\Business\UserFacade getFacade()
  */
 class UserController extends AbstractTwigController
 {
@@ -24,9 +23,6 @@ class UserController extends AbstractTwigController
      * @param \Symfony\Component\HttpFoundation\Request $request
      *
      * @return \Symfony\Component\HttpFoundation\Response
-     * @throws \InvalidArgumentException
-     * @throws \Core\Locator\Dynamic\ServiceNotParseable
-     * @throws \Xervice\User\Business\Exception\UserException
      */
     public function loginAction(Request $request): Response
     {
@@ -47,8 +43,7 @@ class UserController extends AbstractTwigController
         $suffix = '';
         try {
             $this->getFacade()->login($auth);
-        }
-        catch (UserException $exception) {
+        } catch (UserException $exception) {
             $suffix = '?error=1';
         }
 
@@ -58,7 +53,6 @@ class UserController extends AbstractTwigController
     /**
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \InvalidArgumentException
-     * @throws \Core\Locator\Dynamic\ServiceNotParseable
      */
     public function logoutAction(): Response
     {
@@ -70,12 +64,11 @@ class UserController extends AbstractTwigController
      * @param \Symfony\Component\HttpFoundation\Request $request
      *
      * @return \Symfony\Component\HttpFoundation\Response
-     * @throws \Core\Locator\Dynamic\ServiceNotParseable
      * @throws \Propel\Runtime\Exception\PropelException
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
-     * @throws \Xervice\User\Business\Exception\UserException
+     * @throws \Xervice\Core\Business\Exception\ServiceNotFoundException
      */
     public function registerAction(Request $request): Response
     {
@@ -124,15 +117,14 @@ class UserController extends AbstractTwigController
     }
 
     /**
-     * @param $user
-     * @param $userData
+     * @param \DataProvider\UserDataProvider $user
+     * @param array $userData
      *
      * @return \DataProvider\UserDataProvider
-     * @throws \Core\Locator\Dynamic\ServiceNotParseable
      * @throws \Propel\Runtime\Exception\PropelException
      * @throws \Xervice\User\Business\Exception\UserException
      */
-    private function createOrUpdateUser($user, $userData): UserDataProvider
+    private function createOrUpdateUser(UserDataProvider $user, array $userData): UserDataProvider
     {
         if ($user->hasUserId()) {
             $login = $this->getFacade()->getLoginFromUserByType($user->getUserId(), 'Default');

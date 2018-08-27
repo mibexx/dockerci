@@ -1,12 +1,12 @@
 <?php
 
 
-namespace App\LogRabbitMq\Business\Listener;
+namespace App\LogRabbitMq\Business\Model\Listener;
 
 
 use DataProvider\RabbitMqMessageCollectionDataProvider;
 use PhpAmqpLib\Channel\AMQPChannel;
-use Xervice\RabbitMQ\Worker\Listener\AbstractListener;
+use Xervice\RabbitMQ\Business\Model\Worker\Listener\AbstractListener;
 
 /**
  * @method \App\LogRabbitMq\LogRabbitMqFactory getFactory()
@@ -14,13 +14,12 @@ use Xervice\RabbitMQ\Worker\Listener\AbstractListener;
 class LogToFileListener extends AbstractListener
 {
     /**
-     * @var \App\LogRabbitMq\Business\FileLogger\LogToFileHandlerInterface
+     * @var \App\LogRabbitMq\Business\Model\FileLogger\LogToFileHandlerInterface
      */
     private $logHandler;
 
     /**
      * LogToFileListener constructor.
-     * @throws \Core\Locator\Dynamic\ServiceNotParseable
      */
     public function __construct()
     {

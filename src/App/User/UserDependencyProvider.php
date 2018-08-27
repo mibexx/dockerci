@@ -4,8 +4,8 @@
 namespace App\User;
 
 
-use Xervice\GithubAuth\Business\User\GithubLogin;
-use Xervice\User\Business\Authenticator\Login\DefaultLogin;
+use Xervice\GithubAuth\Business\Model\User\GithubLogin;
+use Xervice\User\Business\Model\Authenticator\Login\DefaultLogin;
 use Xervice\User\UserDependencyProvider as XerviceUserDependencyProvider;
 
 class UserDependencyProvider extends XerviceUserDependencyProvider

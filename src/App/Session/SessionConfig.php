@@ -4,7 +4,8 @@
 namespace App\Session;
 
 
-use Xervice\Core\Config\AbstractConfig;
+
+use Xervice\Core\Business\Model\Config\AbstractConfig;
 
 class SessionConfig extends AbstractConfig
 {

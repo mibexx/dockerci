@@ -4,7 +4,7 @@
 namespace App\Twig\Extension;
 
 
-use Xervice\Twig\Business\Twig\Extensions\TwigExtensionInterface;
+use Xervice\Twig\Business\Dependency\Twig\Extensions\TwigExtensionInterface;
 
 class TwigDefaultExtensions implements TwigExtensionInterface
 {
