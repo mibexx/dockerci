@@ -5,9 +5,9 @@ namespace App\Console;
 
 
 use Xervice\Console\ConsoleDependencyProvider as XerviceConsoleDependencyProvider;
-use Xervice\Database\Command\ConfigGenerateCommand;
-use Xervice\Database\Command\MigrateCommand;
-use Xervice\Database\Command\ModelBuildCommand;
+use Xervice\Database\Communication\Console\Command\ConfigGenerateCommand;
+use Xervice\Database\Communication\Console\Command\MigrateCommand;
+use Xervice\Database\Communication\Console\Command\ModelBuildCommand;
 use Xervice\DataProvider\Communication\Console\CleanCommand;
 use Xervice\DataProvider\Communication\Console\GenerateCommand;
 use Xervice\Development\Communication\Console\Command\GenerateAutoCompleteCommand;
