@@ -1,7 +1,7 @@
 <?php
 
 use App\Session\SessionConfig;
-use Xervice\Config\XerviceConfig;
+use Xervice\Config\Business\XerviceConfig;
 use Xervice\Core\CoreConfig;
 use Xervice\Database\DatabaseConfig;
 use Xervice\DataProvider\DataProviderConfig;
