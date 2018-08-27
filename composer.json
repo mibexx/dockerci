@@ -32,7 +32,8 @@
     "xervice/user": "^2.0.0",
     "xervice/github-oauth": "^3.0.0",
     "symfony/form": "^4.1.3",
-    "propel/propel": "2.0.0-alpha8"
+    "propel/propel": "2.0.0-alpha8",
+    "xervice/twig": "^3.0.0"
   },
   "autoload": {
     "psr-4": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "340a5c4e616bb43a68785c09addfb2e3",
+    "content-hash": "da674cb9c44b2aca1a20f635a24b80ec",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -2807,16 +2807,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/twig.git",
-                "reference": "eb1a9793546f115f83584433f239ce252d973160"
+                "reference": "12d547a5c4d0ee0f316ef1bab86201e6802ecba8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/twig/zipball/eb1a9793546f115f83584433f239ce252d973160",
-                "reference": "eb1a9793546f115f83584433f239ce252d973160",
+                "url": "https://api.github.com/repos/xervice/twig/zipball/12d547a5c4d0ee0f316ef1bab86201e6802ecba8",
+                "reference": "12d547a5c4d0ee0f316ef1bab86201e6802ecba8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.0",
+                "symfony/finder": "^4.1.0",
                 "twig/twig": "^2.4.8",
                 "xervice/core": "^4.0.0",
                 "xervice/data-provider": "^2.0.0",
@@ -2846,7 +2847,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-08-27T08:37:37+00:00"
+            "time": "2018-08-27T11:18:16+00:00"
         },
         {
             "name": "xervice/user",
@@ -2854,12 +2855,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/user.git",
-                "reference": "31c91be4697af623430e74fa4ae57415f5b44630"
+                "reference": "5e99b10547ed2d6f1f4a61381d2bd54e8d0b9719"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/user/zipball/31c91be4697af623430e74fa4ae57415f5b44630",
-                "reference": "31c91be4697af623430e74fa4ae57415f5b44630",
+                "url": "https://api.github.com/repos/xervice/user/zipball/5e99b10547ed2d6f1f4a61381d2bd54e8d0b9719",
+                "reference": "5e99b10547ed2d6f1f4a61381d2bd54e8d0b9719",
                 "shasum": ""
             },
             "require": {
@@ -2895,7 +2896,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-08-27T08:18:01+00:00"
+            "time": "2018-08-27T10:44:09+00:00"
         },
         {
             "name": "xervice/web",

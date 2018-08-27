@@ -4,20 +4,19 @@
 namespace App\User\Business\Twig\Extension;
 
 
-use Xervice\Core\Locator\Dynamic\DynamicLocator;
+use Xervice\Core\Business\Model\Locator\Dynamic\Business\DynamicBusinessLocator;
 
 /**
- * @method \Xervice\User\UserFacade getFacade()
+ * @method \Xervice\User\Business\UserFacade getFacade()
  */
 class GetUserExtension extends \Twig_Extension
 {
-    use DynamicLocator;
+    use DynamicBusinessLocator;
 
     private const FUNCTION_NAME = 'getUser';
 
     /**
      * @return array|\Twig_Function[]
-     * @throws \Core\Locator\Dynamic\ServiceNotParseable
      */
     public function getFunctions()
     {

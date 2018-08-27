@@ -5,7 +5,7 @@ namespace App\User\Business\Twig;
 
 
 use App\User\Business\Twig\Extension\GetUserExtension;
-use Xervice\Twig\Business\Twig\Extensions\TwigExtensionInterface;
+use Xervice\Twig\Business\Dependency\Twig\Extensions\TwigExtensionInterface;
 
 class UserTwigExtension implements TwigExtensionInterface
 {

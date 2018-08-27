@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @method \App\DockerCi\DockerCiCommunicationFactory getFactory()
+ * @method \App\DockerCi\Communication\DockerCiCommunicationFactory getFactory()
  */
 class IndexController extends AbstractTwigController
 {
@@ -27,7 +27,12 @@ class IndexController extends AbstractTwigController
     {
         return ($this->getFactory()->getUserFacade()->getLoggedUser())
             ? $this->getRedirectToDashboard()
-                : $this->sendTwig('pages/index.twig', [ 'error' => $request->query->has('error') ? $request->query->get('error') : '' ]);
+            : $this->sendTwig(
+                'pages/index.twig',
+                [
+                    'error' => $request->query->has('error') ? $request->query->get('error') : ''
+                ]
+            );
     }
 
     /**
