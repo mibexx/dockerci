@@ -1889,12 +1889,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/api.git",
-                "reference": "3dbea0f2dfa21f3baa09813c247148e81cd37b34"
+                "reference": "9aaeb5b24e901f0b732abedeb48acbaf372b705c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/api/zipball/3dbea0f2dfa21f3baa09813c247148e81cd37b34",
-                "reference": "3dbea0f2dfa21f3baa09813c247148e81cd37b34",
+                "url": "https://api.github.com/repos/xervice/api/zipball/9aaeb5b24e901f0b732abedeb48acbaf372b705c",
+                "reference": "9aaeb5b24e901f0b732abedeb48acbaf372b705c",
                 "shasum": ""
             },
             "require": {
@@ -1928,7 +1928,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-08-24T12:50:50+00:00"
+            "time": "2018-08-27T10:07:05+00:00"
         },
         {
             "name": "xervice/atomic",

@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace App\Kernel;
 
 
-use Xervice\Api\Communication\Plugin\ApiAuthService;
+use Xervice\Api\Business\Plugin\ApiAuthService;
 use Xervice\Database\Communication\Plugin\DatabaseService;
 use Xervice\ExceptionHandler\Business\Model\Kernel\ExceptionService;
 use Xervice\Kernel\KernelDependencyProvider as XerviceKernelDependencyProvider;
