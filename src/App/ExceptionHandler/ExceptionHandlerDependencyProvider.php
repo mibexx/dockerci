@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace App\ExceptionHandler;
 
 
-use App\Logger\Business\ExceptionHandler\LogExceptionHandler;
+use App\Logger\Communication\Plugin\LogExceptionHandler;
 use App\Xervice\Business\ExceptionRegister\WhoopsExceptionHandler;
 use Xervice\ExceptionHandler\Business\Model\Register\Register\ExceptionHandlerRegister;
 use Xervice\ExceptionHandler\ExceptionHandlerDependencyProvider as XerviceExceptionHandlerDependencyProvider;
