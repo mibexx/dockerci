@@ -1889,12 +1889,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/api.git",
-                "reference": "9aaeb5b24e901f0b732abedeb48acbaf372b705c"
+                "reference": "46080cdea0d243c6d74d19dfe9140d7778da9740"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/api/zipball/9aaeb5b24e901f0b732abedeb48acbaf372b705c",
-                "reference": "9aaeb5b24e901f0b732abedeb48acbaf372b705c",
+                "url": "https://api.github.com/repos/xervice/api/zipball/46080cdea0d243c6d74d19dfe9140d7778da9740",
+                "reference": "46080cdea0d243c6d74d19dfe9140d7778da9740",
                 "shasum": ""
             },
             "require": {
@@ -1928,7 +1928,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-08-27T10:07:05+00:00"
+            "time": "2018-08-27T10:16:03+00:00"
         },
         {
             "name": "xervice/atomic",
@@ -2348,12 +2348,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xervice/exception-handler.git",
-                "reference": "4e734fe2e58d654192878e4391ed3ea94a31eecd"
+                "reference": "85633e04ae3246a36b173ba491557f25d2c014d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xervice/exception-handler/zipball/4e734fe2e58d654192878e4391ed3ea94a31eecd",
-                "reference": "4e734fe2e58d654192878e4391ed3ea94a31eecd",
+                "url": "https://api.github.com/repos/xervice/exception-handler/zipball/85633e04ae3246a36b173ba491557f25d2c014d8",
+                "reference": "85633e04ae3246a36b173ba491557f25d2c014d8",
                 "shasum": ""
             },
             "require": {
@@ -2385,7 +2385,7 @@
                     "email": "contact@mibexx.de"
                 }
             ],
-            "time": "2018-08-22T10:40:13+00:00"
+            "time": "2018-08-27T10:21:16+00:00"
         },
         {
             "name": "xervice/github-oauth",

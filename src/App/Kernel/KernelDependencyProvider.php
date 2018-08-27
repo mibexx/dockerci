@@ -6,7 +6,7 @@ namespace App\Kernel;
 
 use Xervice\Api\Business\Plugin\ApiAuthService;
 use Xervice\Database\Communication\Plugin\DatabaseService;
-use Xervice\ExceptionHandler\Business\Model\Kernel\ExceptionService;
+use Xervice\ExceptionHandler\Communication\Plugin\ExceptionService;
 use Xervice\Kernel\KernelDependencyProvider as XerviceKernelDependencyProvider;
 use Xervice\RabbitMQ\Communication\Plugin\RabbitMqService;
 use Xervice\Redis\Communication\Plugin\RedisService;
